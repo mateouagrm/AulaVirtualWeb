@@ -1,0 +1,114 @@
+git add .
+git commit -m "comentario"
+git push
+
+
+git pull
+
+<link rel="stylesheet" href="{{asset('css/plugins/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/AdminLTE.css')}}">
+    <link rel="stylesheet" href="{{asset('css/plantilla.css')}}">
+    <link rel="stylesheet" href="{{asset('css/cabezote.css')}}">
+    <link rel="stylesheet" href="{{asset('css/footer.css')}}">
+    <link rel="stylesheet" href="{{asset('css/slide.css')}}">
+    <link rel="stylesheet" href="{{asset('css/productos.css')}}">
+    <link rel="shortcut icon" type="image/ico" href="{{asset('img/favicon.png')}}">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
+
+
+
+<script src="{{asset('js/plugins/jquery.easing.js')}}"></script>
+<script src="{{asset('js/slide.js')}}"></script>
+<script src="{{asset('js/adminlte.min.js')}}"></script>
+<script src="{{asset('js/registrarUsuario.js')}}"></script>
+<script src="{{asset('js/registrarProducto.js')}}"></script>
+
+
+
+php artisan make:migration crear_tabla_nombre --create=nombre
+php artisan migrate:refresh
+php artisan migrate:reset 
+
+
+php artisan make:seeder UsersTableSeeder
+ DB::table('users')->insert([
+            'name' => str_random(10),
+            'email' => str_random(10).'@gmail.com',
+            'password' => bcrypt('secret'),
+        ]);
+
+php artisan db:seed
+
+C:\xampp\htdocs\ejercicio1
+
+
+catalog 
+
+
+pedido
+       $table->increments('id');
+            $table->string('fechapedido');
+            $table->integer('tiempo');
+            
+
+            $table->integer('idcliente')->unsigned();
+            $table->integer('idencagado')->unsigned();
+            $table->string('estado');
+            $table->integer('idcoordenada')->unsigned();
+            $table->integer('idrepartidor')->unsigned();
+
+            $table->foreign('idcliente')->references('id')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idencagado')->references('id')->on('encargado')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idcoordenada')->references('id')->on('coordenada')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idrepartidor')->references('id')->on('repartidor')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->timestamps();
+            $table->softDeletes();
+
+
+pedido model
+
+
+   public function inPedidoProducto(){
+            return $this->hasMany('sisServicio\PedidoProducto');
+        }
+
+        public function productos(){
+            return $this->belongsToMany('sisServicio\Producto','pedidoproducto');
+        }
+
+public function cantidadProducto(){
+        return $this->id;//producto()->count() id
+    }
+
+    public static function findOrCreateBySessionID($idpedido){
+        if ($idpedido) {
+            //buscar el pedido de compras con este id
+            return Pedido::findBySession($idpedido);
+        }else{
+            // Crear un carrito de pedido
+            return Pedido::createWithoutSession();
+        }
+    }
+
+    public static function findBySession($idpedido){
+        return Pedido::find($idpedido);
+    }
+
+    public static function createWithoutSession(){
+        $pedido=new Pedido;
+        $pedido->idcliente=Auth::User()->id;
+        $pedido->estado="incompleto";
+        $copia=$pedido;
+        $pedido->save();
+        \Session::flash('idpedido',$copia);
+        return $copia;
+            
+          
+             /*   return Pedido::create([
+                    "idcliente"=>Auth::User()->id,
+                    "estado"=>"incompleto"      
+                   ]);
+            */
+    }
