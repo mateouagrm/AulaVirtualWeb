@@ -31,16 +31,17 @@
                         @foreach ($cargo as $car)
                         <tbody>
                             <tr role="row" class="odd">
-                                <td class="sorting_1" tabindex="0">{{ $car->id}}</td>
-                                <td>{{ $car->nombre}}</td>
+                                <td class="sorting_1" tabindex="0">{{ $car->id }}</td>
+                                <td>{{ $car->nombre }}</td>
                                 <td>
                                 <div class="btn-group" >
                                     <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>
-
-                                    <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i> eliminar</button>
+                                    
+                                    <a href="" data-target="#modal-delete-{{$car->id}}" data-toggle="modal"><button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i>eliminar</button></a>
                                 </div>
                                 </td>
                             </tr>
+                            @include('administrador.cargo.modal')
                         </tbody>
                         @endforeach
                     </table>
@@ -50,7 +51,7 @@
         </div>
         <div class="col-md-5">
             <div class="modal-content">
-                <form action="{{ url('/administrador-categoria') }}" method="post" >
+                <form action="{{ url('/administrador-cargo') }}" method="post" >
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                         <!--=====================================
                        CABEZA DEL MODAL
