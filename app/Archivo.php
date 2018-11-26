@@ -10,5 +10,5 @@ class Archivo extends Model
 
     protected $fillable =[
     'nombre','id_aula','id_requisito','enlace','fecha'
-    ];
+    ];//cesarrrrr
 }
