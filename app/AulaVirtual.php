@@ -11,7 +11,7 @@ class AulaVirtual extends Model
     public $timestamps=false;
 
     protected $fillable =[
-    'materia','carrera','idcreador','idprofesor','idcronograma'
+    'materia','carrera','id_creador','id_profesor','id_cronograma'
     ];
 
     

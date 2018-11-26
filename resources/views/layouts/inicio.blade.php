@@ -58,7 +58,8 @@
                         <li class="divider"></li>
                         <li><a href="{{url('administrador-cronograma')}}">Cronograma</a></li>
                         <li class="divider"></li>
-                        <li><a href="{{url('administrador-users')}}">users</a></li>
+                        <li><a href="{{url('administrador-users')}}">Users</a></li>
+                        <li><a href="{{url('administrador-aula-virtual')}}">Aula Virtual</a></li>
                       </ul>
                     </li>
                 </ul>

@@ -76,6 +76,10 @@ Route::resource('administrador-cronograma','CronogramaController');
 /*USUARIO*/
 Route::resource('administrador-users','UserController');
 
+/*AULA VIRTUAL*/
+Route::resource('administrador-aula-virtual','AulaVirtualController');
+
+
 //login registro.
 Route::post('/login2', 'UserController@login');
 Route::post('/registro2', 'UserController@register');

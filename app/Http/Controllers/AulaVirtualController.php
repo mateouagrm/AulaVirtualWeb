@@ -15,9 +15,11 @@ class AulaVirtualController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   $cronograma = Cronograma::All();
+        $user = User::All();
         $aula=AulaVirtual::orderBy('id','DESC')->paginate(8);
-        return view('administrador.aula.index', ["aulas"=>$aula]);
+        return view('administrador.aulaVirtual.index', 
+            ["aulas"=>$aula,"user"=>$user,"cronograma"=>$cronograma]);
     }
 
     /**
