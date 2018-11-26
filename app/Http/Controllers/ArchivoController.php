@@ -77,8 +77,8 @@ class ArchivoController extends Controller
      * @param  \App\Bono  $bono
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bono $bono)
+    public function destroy($id)
     {
-        //
+        
     }
 }
