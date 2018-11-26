@@ -14,7 +14,7 @@ class CronogramaController extends Controller
      */
     public function index()
     {
-        $cronograma=Cronograma::orderBy('id','DESC')->paginate(3);
+        $cronograma=Cronograma::orderBy('id','DESC')->paginate(5);
         return view('administrador.cronograma.index', ["cronograma"=>$cronograma]);
     }
 
@@ -36,7 +36,14 @@ class CronogramaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $this->validate($request,[ 'inicio'=>'required',
+                                    'fin'=>'required']);
+        if (  Cronograma::create($request->all())){
+            return redirect('administrador-cronograma')->with('mensajesucces',"registro exitoso");
+        }else{
+            return redirect('administrador-cronograma')->with('mensajesucces',"no se pudo guardar");
+        }
     }
 
     /**
@@ -70,7 +77,17 @@ class CronogramaController extends Controller
      */
     public function update(Request $request, Recomendado $recomendado)
     {
-        //
+        $this->validate($request,[ 'inicio'=>'required',
+                                    'fin'=>'required']);
+        $cronograma = Ciclo::findOrFail($id);
+        $cronograma->inicio = $request->input('inicio');
+        $cronograma->fin = $request->input('fin');
+
+         if ($cronograma->update()){
+            return redirect('administrador-cronograma')->with('mensajesucces',"editado exitoso");
+        }else{
+            return redirect('administrador-cronograma')->with('mensajesucces',"no se pudo guardar");
+        }
     }
 
     /**

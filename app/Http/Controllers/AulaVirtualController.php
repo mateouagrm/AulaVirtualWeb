@@ -97,8 +97,10 @@ class AulaVirtualController extends Controller
      * @param  \App\CiudadCategoria  $ciudadCategoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CiudadCategoria $ciudadCategoria)
+    public function destroy($id)
     {
-        //
+        $aula = AulaVirtual::find($id);
+        $aula->delete();
+        return back();
     }
 }
