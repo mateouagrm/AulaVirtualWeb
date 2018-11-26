@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cargo;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class CargoController extends Controller
@@ -36,18 +37,10 @@ class CargoController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Ciudad  $ciudad
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Ciudad $ciudad)
-    {
-        //
+        $cargo = new Cargo;
+        $cargo->nombre = $request->get('nombre');
+        $cargo->save();
+        return Redirect::to('administrador-cargo');
     }
 
     /**
@@ -68,9 +61,12 @@ class CargoController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ciudad $ciudad)
+    public function update(Request $request, $id)
     {
-        //
+        $cargo = Cargo::findOrFail($id);
+        $cargo->nombre = $request->get('nombre');
+        $cargo->update();
+        return Redirect::to('administrador-cargo');
     }
 
     /**
@@ -79,8 +75,10 @@ class CargoController extends Controller
      * @param  \App\Ciudad  $ciudad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ciudad $ciudad)
+    public function destroy($id)
     {
-        //
+        $cargo = cargo::findOrFail($id);
+        $cargo->delete();
+        return Redirect::to('administrador-cargo');
     }
 }
