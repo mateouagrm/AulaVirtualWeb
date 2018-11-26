@@ -14,7 +14,7 @@ class CicloController extends Controller
      */
     public function index()
     {
-        $ciclo=Ciclo::orderBy('id','DESC')->paginate(3);
+        $ciclo=Ciclo::orderBy('id','desc')->paginate(5);
         return view('administrador.ciclo.index', ["ciclo"=>$ciclo]);
     }
 
@@ -36,7 +36,15 @@ class CicloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        $this->validate($request,[ 'nombre'=>'required',
+                                    'puntaje'=>'required']);
+      
+        if (  Ciclo::create($request->all())){
+            return redirect('administrador-ciclo')->with('mensajesucces',"registro exitoso");
+        }else{
+            return redirect('administrador-ciclo')->with('mensajesucces',"no se pudo guardar");
+        }
     }
 
     /**
@@ -68,9 +76,20 @@ class CicloController extends Controller
      * @param  \App\SubCategoria  $subCategoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubCategoria $subCategoria)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[ 'nombre'=>'required',
+                                    'puntaje'=>'required']);
+        $ciclo = Ciclo::findOrFail($id);
+        $ciclo->nombre = $request->input('nombre');
+        $ciclo->puntaje = $request->input('puntaje');
+
+        if ($ciclo->update()){
+            return redirect('administrador-ciclo')->with('mensajesucces',"editado exitoso");
+        }else{
+            return redirect('administrador-ciclo')->with('mensajesucces',"no se pudo guardar");
+        }
+    
     }
 
     /**
@@ -79,8 +98,10 @@ class CicloController extends Controller
      * @param  \App\SubCategoria  $subCategoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubCategoria $subCategoria)
+    public function destroy($id)
     {
-        //
+         $ciclo = Ciclo::findOrFail($id);
+         $ciclo->delete();
+       return  redirect()->route('administrador-ciclo.index');
     }
 }
