@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class AulaVirtual extends Model
 {
-    protected $table='ciudad';
-    protected $primarykey='id';
+    protected $table='aula_virtual';
 
     public $timestamps=false;
 
     protected $fillable =[
-    'nombre'
+    'materia','carrera','idcreador','idprofesor','idcronograma'
     ];
 
     
