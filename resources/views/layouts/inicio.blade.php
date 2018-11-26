@@ -48,12 +48,17 @@
                             <i class="fa fa-instagram redSocial instagramBlanco" aria-hidden="true"></i>
                         </a>
                     </li>
+                    
                     <li class="dropdown">
-                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administrador <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administrador <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
                         <li><a href="{{url('administrador-cargo')}}">Cargo</a></li>
-                        <li><a href="#">Submenu 1-2</a></li>
-                        <li><a href="#">Submenu 1-3</a></li>                        
+                        <li class="divider"></li>
+                        <li><a href="{{url('administrador-ciclo')}}">Ciclo</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{url('administrador-cronograma')}}">Cronograma</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{url('administrador-users')}}">users</a></li>
                       </ul>
                     </li>
                 </ul>

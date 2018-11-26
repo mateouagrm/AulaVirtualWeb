@@ -4,11 +4,11 @@
 <div class="container">
 <section class="content-header">
     <h4>
-        Gestionar Cargo
+        Gestionar Ciclo
     </h4>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li>
-        <li class="active">Gestor Cargo</li>
+        <li class="active">Gestor Ciclo</li>
     </ol>
 </section>
 
@@ -17,7 +17,7 @@
         <div class="col-md-7">
             <div class="box">
                 <div class="box-header">
-                    <h4>lista de cargos</h4>
+                    <h4>lista de ciclo</h4>
                 </div>
                 <div class="box-body">
                     <table class="table table-bordered table-striped dt-responsive">
@@ -25,14 +25,16 @@
                             <tr>
                                 <th style="width:10px">#</th>
                                 <th>Nombre</th>
+                                <th>Puntaje</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        @foreach ($cargo as $car)
+                        @foreach ($ciclo as $cic)
                         <tbody>
                             <tr role="row" class="odd">
-                                <td class="sorting_1" tabindex="0">{{ $car->id}}</td>
-                                <td>{{ $car->nombre}}</td>
+                                <td class="sorting_1" tabindex="0">{{ $cic->id}}</td>
+                                <td>{{ $cic->nombre}}</td>
+                                <td>{{ $cic->puntaje}}</td>
                                 <td>
                                 <div class="btn-group" >
                                     <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>
@@ -44,7 +46,7 @@
                         </tbody>
                         @endforeach
                     </table>
-                    {{ $cargo->render()}}        
+                    {{ $ciclo->render()}}        
                 </div>
             </div>    
         </div>
@@ -57,7 +59,7 @@
                        ======================================-->
                     <div class="modal-header" style="background:#3c8dbc; color:white">
                         <button type="button" class="close" data-dismiss="modal"></button>
-                            <h4 class="modal-title">Agregar Cargo</h4>
+                            <h4 class="modal-title">Agregar Ciclo</h4>
                     </div>
                         <!--=====================================
                         CUERPO DEL MODAL
@@ -67,7 +69,14 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                        <input type="text" class="form-control input-lg" value="" name="nombre" placeholder="Ingresar nombre del Cargo">
+                                        <input type="text" class="form-control input-lg" value="" name="nombre" placeholder="Ingresar nombre del Ciclo">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                        <input type="number" class="form-control input-lg" value="" name="puntaje" placeholder="Ingresar el puntaje">
                                 </div>
                             </div>
                         </div>
@@ -77,66 +86,12 @@
                         ======================================-->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
-                            <input type="submit" value="Guardar Cargo" class="btn btn-primary ">
+                            <input type="submit" value="Guardar Ciclo" class="btn btn-primary ">
                         </div>
                     </form>            
             </div>
         </div>
-
     </div>
-  <!--  <div class="box">
-        <div class="box-header">
-            <div class="row">
-                <div class="col-md-3">
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
-                        Agregar Categoria
-                    </button>
-                    @include('mensajesucces')
-                    @include('mensajeerror')
-                </div>
-                 <div class="col-md-9">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-                        <span class="input-group-btn">
-                            <a href="#">
-                                <button class="btn btn-default backColor" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </a>
-                        </span>
-                    </div>
-                 </div>
-            </div>
-        </div>
-        <div class="box-body table-responsive">
-            <table class="table table-bordered table-striped dt-responsive">
-                <thead>
-                    <tr>
-                        <th style="width:10px">#</th>
-                        <th>Nombre</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                @foreach ($cargo as $car)
-                <tbody>
-                    <tr role="row" class="odd">
-                        <td class="sorting_1" tabindex="0">{{ $car->id}}</td>
-                        <td>{{ $car->nombre}}</td>
-                        <td>
-                        <div class="btn-group" >
-                            <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>
-
-                            <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i> eliminar</button>
-                        </div>
-                        </td>
-                    </tr>
-                </tbody>
-                @endforeach
-            </table>
-            {{ $cargo->render()}}
-        </div>
-    </div>
--->
  </section>
  </div>
 @endsection

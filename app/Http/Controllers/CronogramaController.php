@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Recomendado;
+use App\Cronograma;
 use Illuminate\Http\Request;
 
 class CronogramaController extends Controller
@@ -14,7 +14,8 @@ class CronogramaController extends Controller
      */
     public function index()
     {
-        //
+        $cronograma=Cronograma::orderBy('id','DESC')->paginate(3);
+        return view('administrador.cronograma.index', ["cronograma"=>$cronograma]);
     }
 
     /**

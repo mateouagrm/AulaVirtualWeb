@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\SubCategoria;
+use App\Ciclo;
 use Illuminate\Http\Request;
 
 class CicloController extends Controller
@@ -14,7 +14,8 @@ class CicloController extends Controller
      */
     public function index()
     {
-        //
+        $ciclo=Ciclo::orderBy('id','DESC')->paginate(3);
+        return view('administrador.ciclo.index', ["ciclo"=>$ciclo]);
     }
 
     /**
