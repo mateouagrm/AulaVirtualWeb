@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Ciudad;
+use App\Cargo;
 use Illuminate\Http\Request;
 
 class CargoController extends Controller
@@ -14,7 +14,8 @@ class CargoController extends Controller
      */
     public function index()
     {
-        //
+        $cargo=Cargo::orderBy('id','DESC')->paginate(3);
+        return view('administrador.cargo.index', ["cargo"=>$cargo]);
     }
 
     /**

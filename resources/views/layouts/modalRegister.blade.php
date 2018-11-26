@@ -10,7 +10,8 @@ VENTANA MODAL PARA EL REGISTRO
             <!--=====================================
             REGISTRO DIRECTO
             ======================================-->
-            <form method="post" action="">  
+            <form method="post" action="{{url('registro2')}}">  
+                {{ csrf_field() }}
             <hr>
                 <div class="form-group">  
                     <div class="input-group">

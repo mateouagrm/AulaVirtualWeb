@@ -17,8 +17,8 @@ class CrearTablaRequisito extends Migration
             $table->increments('id');
             $table->string('nombre')->nullable();
             $table->integer('puntaje')->nullable();
-            $table->integer('idciclo')->unsigned();
-            $table->foreign('idciclo')->references('id')->on('ciclo')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_ciclo')->unsigned();
+            $table->foreign('id_ciclo')->references('id')->on('ciclo')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

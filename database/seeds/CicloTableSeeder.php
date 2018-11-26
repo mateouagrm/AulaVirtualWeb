@@ -11,6 +11,7 @@ class CicloTableSeeder extends Seeder
      */
     public function run()
     {
+
 /*=================================================
 CICLOS
 ===================================================*/

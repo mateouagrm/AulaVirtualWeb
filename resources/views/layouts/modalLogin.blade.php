@@ -10,14 +10,15 @@ VENTANA MODAL PARA EL INGRESO
             <!--=====================================
             INGRESO DIRECTO
             ======================================-->
-            <form method="post" action="">   
+            <form method="post" action="{{url('login2')}}">   
+                 {{ csrf_field() }}
             <hr>
                 <div class="form-group">
                     <div class="input-group">  
                         <span class="input-group-addon">   
                             <i class="glyphicon glyphicon-envelope"></i>
                         </span>
-                        <input type="email" class="form-control" id="ingEmail" name="ingEmail" placeholder="Correo Electrónico" required>
+                        <input type="email" class="form-control" name="email" placeholder="Correo Electrónico" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -25,7 +26,7 @@ VENTANA MODAL PARA EL INGRESO
                         <span class="input-group-addon">   
                             <i class="glyphicon glyphicon-lock"></i>
                         </span>
-                        <input type="password" class="form-control" id="ingPassword" name="ingPassword" placeholder="Contraseña" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
                     </div>
                 </div>
 

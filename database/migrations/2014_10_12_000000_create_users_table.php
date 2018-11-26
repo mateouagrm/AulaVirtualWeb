@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ci')->nullable();
             $table->integer('codigo')->nullable();
@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->nullable();
             $table->string('password')->nullable();
 
-            $table->integer('idcargo')->unsigned();
-            $table->foreign('idcargo')->references('id')->on('cargo')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('id_cargo')->unsigned();
+            $table->foreign('id_cargo')->references('id')->on('cargo')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -36,6 +36,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('users');
     }
 }

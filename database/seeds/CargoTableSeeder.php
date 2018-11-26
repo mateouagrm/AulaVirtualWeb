@@ -12,10 +12,12 @@ class CargoTableSeeder extends Seeder
     public function run()
     {
         DB::table('cargo')->insert([
-            'nombre' => 'Director',
+            'id'        => 1,
+            'nombre'    => 'Director',
         ]);
         DB::table('cargo')->insert([
-            'nombre' => 'Profesor',
+            'id'        => 2,
+            'nombre'    => 'Profesor',
         ]);
     }
 }

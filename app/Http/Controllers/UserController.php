@@ -111,5 +111,11 @@ class UserController extends Controller
          return view('administrador.usuarioRecomendado.index', ["recomendado"=>$recomendado, "searchText"=>$query]);
         }    }
 
+  public function login(Request $request){
+    dd($request);
+  }
 
+  public function register(Request $request){
+    dd($request);
+  }
 }

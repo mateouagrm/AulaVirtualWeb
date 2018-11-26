@@ -48,10 +48,13 @@
                             <i class="fa fa-instagram redSocial instagramBlanco" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li>
-                        <a href="{{ url('/perfil') }}">
-                         <span>Panel de control</span>
-                        </a>
+                    <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administrador <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="{{url('administrador-cargo')}}">Cargo</a></li>
+                        <li><a href="#">Submenu 1-2</a></li>
+                        <li><a href="#">Submenu 1-3</a></li>                        
+                      </ul>
                     </li>
                 </ul>
             </div>

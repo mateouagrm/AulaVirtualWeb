@@ -16,14 +16,14 @@ class CrearTablaArchivo extends Migration
         Schema::create('archivo', function (Blueprint $table) {
             $table->increments('id');
              $table->string('nombre')->nullable();
-             $table->integer('idaula')->unsigned();
-             $table->integer('idrequisito')->unsigned();
+             $table->integer('id_aula')->unsigned();
+             $table->integer('id_requisito')->unsigned();
              $table->string('enlace')->nullable();
              $table->string('fecha');
 
 
-            $table->foreign('idaula')->references('id')->on('aula_virtual')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('idrequisito')->references('id')->on('requisito')->onDelete('cascade')->onUpdate('cascade');        
+            $table->foreign('id_aula')->references('id')->on('aula_virtual')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_requisito')->references('id')->on('requisito')->onDelete('cascade')->onUpdate('cascade');        
         });
     }
 

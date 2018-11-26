@@ -14,7 +14,7 @@ class UsuarioTableSeeder extends Seeder
 /*=================================================
 DIRECTOR SISTEMA
 ===================================================*/
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '123',
             'codigo' => '123',
             'nombre' => 'KATIME ESTHER',
@@ -28,7 +28,7 @@ DIRECTOR SISTEMA
 /*=================================================
 DIRECTOR INFORMATICA
 ===================================================*/
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '1234',
             'codigo' => '1234',
             'nombre' => 'MODESTO FRANKLIN',
@@ -42,7 +42,7 @@ DIRECTOR INFORMATICA
 /*=================================================
 DIRECTOR REDES
 ===================================================*/
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '1235',
             'codigo' => '1235',
             'nombre' => 'VICTOR FERNANDO',
@@ -59,7 +59,7 @@ TERRAZA SOTO RICARDO     4   -> ORGANIZACION Y METODOS
 VEIZAGA GONZALES JOSUE OBED -> BASE DE DATOS I
 CABELLO MERIDA JUAN RUBEN   -> FINANZA PARA LA EMPRESA
 ===================================================*/
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '222',
             'codigo' => '222',
             'nombre' => 'RICARDO',
@@ -70,7 +70,7 @@ CABELLO MERIDA JUAN RUBEN   -> FINANZA PARA LA EMPRESA
             'password' => '123456',
             'idcargo' => '2',
         ]);
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '2223',
             'codigo' => '2223',
             'nombre' => 'JOSUE OBED',
@@ -81,7 +81,7 @@ CABELLO MERIDA JUAN RUBEN   -> FINANZA PARA LA EMPRESA
             'password' => '123456',
             'idcargo' => '2',
         ]);
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '22243',
             'codigo' => '222343',
             'nombre' => 'JUAN RUBEN',
@@ -98,7 +98,7 @@ ARANIBAR QUIROZ MARTHA MONICA   -> FISICA I
 AVENDANO GONZALES EUDAL         -> CALCULO I
 ZEBALLOS PAREDES DANIEL LUIS    -> FISICA II
 ===================================================*/        
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '2225',
             'codigo' => '22235',
             'nombre' => 'MARTHA MONICA',
@@ -109,7 +109,7 @@ ZEBALLOS PAREDES DANIEL LUIS    -> FISICA II
             'password' => '123456',
             'idcargo' => '2',
         ]);
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '2226',
             'codigo' => '22236',
             'nombre' => 'EUDAL',
@@ -120,7 +120,7 @@ ZEBALLOS PAREDES DANIEL LUIS    -> FISICA II
             'password' => '123456',
             'idcargo' => '2',
         ]);
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '2227',
             'codigo' => '2227',
             'nombre' => 'DANIEL LUIS',
@@ -137,7 +137,7 @@ CARVAJAL CORDERO MARCIO         -> APLICACIONES CON MICROPROCESAD.
 LAMAS RODRIGUEZ MARCOS RODRIGO  -> LEGISLAC.EN REDES Y COMUNICACIONES
 VALLET VALLET CORRADO           -> PROGRAMACION ENSAMBLADOR
 ===================================================*/        
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '22234',
             'codigo' => '22234',
             'nombre' => 'MARCIO',
@@ -148,7 +148,7 @@ VALLET VALLET CORRADO           -> PROGRAMACION ENSAMBLADOR
             'password' => '123456',
             'idcargo' => '2',
         ]);
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '22245',
             'codigo' => '222345',
             'nombre' => 'MARCOS RODRIGO',
@@ -159,7 +159,7 @@ VALLET VALLET CORRADO           -> PROGRAMACION ENSAMBLADOR
             'password' => '123456',
             'idcargo' => '2',
         ]);
-        DB::table('usuario')->insert([
+        DB::table('users')->insert([
             'ci' => '22263',
             'codigo' => '222366',
             'nombre' => 'CORRADO',

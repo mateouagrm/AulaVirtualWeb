@@ -15,17 +15,17 @@ class CrearTablaAulaVirtual extends Migration
     {
         Schema::create('aula_virtual', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idcreador')->unsigned();
-            $table->integer('idprofesor')->unsigned();
-            $table->integer('idcronograma')->unsigned();
+            $table->integer('id_creador')->unsigned();
+            $table->integer('id_profesor')->unsigned();
+            $table->integer('id_cronograma')->unsigned();
             $table->string('materia')->nullable();
             $table->string('carrera')->nullable();
 
-            $table->foreign('idcreador')->references('id')->on('usuario')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_creador')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreign('idprofesor')->references('id')->on('usuario')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_profesor')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->foreign('idcronograma')->references('id')->on('cronograma')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_cronograma')->references('id')->on('cronograma')->onDelete('cascade')->onUpdate('cascade');
 
         });
     }

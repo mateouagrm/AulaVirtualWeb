@@ -59,5 +59,10 @@ Route::get('administrador-subcategoria/{id}','ProductoController@subcategoria');
 /*CATEGORIA*/
 Route::resource('administrador-categoria','CategoriaController');
 
+/*CARGO*/
+Route::resource('administrador-cargo','CargoController');
+//login registro.
+Route::post('/login2', 'UserController@login');
+Route::post('/registro2', 'UserController@register');
 
 
