@@ -52,7 +52,7 @@
         </div>
         <div class="col-md-5">
             <div class="modal-content">
-                <form action="{{ url('/administrador-categoria') }}" method="post" >
+                <form action="{{ url('/administrador-cronograma') }}" method="post" >
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                         <!--=====================================
                        CABEZA DEL MODAL
