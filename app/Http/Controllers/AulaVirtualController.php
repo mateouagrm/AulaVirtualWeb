@@ -6,6 +6,7 @@ use App\AulaVirtual;
 use App\User;
 use App\Cronograma;
 use Illuminate\Http\Request;
+use DB;
 
 class AulaVirtualController extends Controller
 {

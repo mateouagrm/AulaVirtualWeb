@@ -54,7 +54,7 @@ class ArchivoController extends Controller
      * @param  \App\Bono  $bono
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bono $bono)
+    public function edit()
     {
         //
     }
@@ -66,7 +66,7 @@ class ArchivoController extends Controller
      * @param  \App\Bono  $bono
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bono $bono)
+    public function update(Request $request,$id)
     {
         //
     }

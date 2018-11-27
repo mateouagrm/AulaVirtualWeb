@@ -98,6 +98,8 @@ class CronogramaController extends Controller
      */
     public function destroy(Recomendado $recomendado)
     {
-        //
+         $cronograma = Cronograma::findOrFail($id);
+         $cronograma->delete();
+       return  redirect()->route('administradorcronograma.index');
     }
 }

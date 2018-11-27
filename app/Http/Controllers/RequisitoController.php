@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Ciudad;
-use App\SubCategoria;
-use App\Categoria;
-use App\Producto;
+use App\Requisito;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
@@ -18,18 +16,12 @@ class RequisitoController extends Controller
 
     }
 
-    public function index(Request $request)
+    public function index()
     {
-        if ($request) {
-         $query = trim($request->get('searchText'));
-         $users = DB::table('users')
-         ->where('nombre','LIKE','%'.$query.'%')
-         ->orderBy('id','asc')
-         ->paginate(8);
-         $ciudad = Ciudad::all();
+       $requisito = Requisito::orderBy('id','desc')->paginate(10);
 
-         return view('administrador.producto.index', ["users"=>$users, "searchText"=>$query,"ciudad"=>$ciudad]);
-        }
+         return view('administrador.requisito.index', ["requisitos"=>$requisito]);
+    
     }
 
     /**
@@ -39,7 +31,9 @@ class RequisitoController extends Controller
      */
     public function create()
     {
-        //
+        $ciclos = DB::table('ciclo')
+         ->get();
+          return view('administrador.ciclo.store', ["ciclos"=>$ciclo]);
     }
 
     /**
@@ -50,7 +44,15 @@ class RequisitoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $this->validate($request,[ 'nombre'=>'required',
+                                    'puntaje'=>'required'
+                                    'id_ciclo'=>'required']);
+      
+        if (  Requisito::create($request->all())){
+            return redirect('administrador-requisito')->with('mensajesucces',"registro exitoso");
+        }else{
+            return redirect('administrador-requisito')->with('mensajesucces',"no se pudo guardar");
+        }
     }
 
     /**
@@ -70,9 +72,12 @@ class RequisitoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Producto $producto)
+    public function edit($id)
     {
-        //
+         $ciclos = DB::table('ciclo')
+         ->get();
+         $requisito = Requisito::findOrFail($id);
+          return view('administrador.ciclo.edit', ["ciclos"=>$ciclo,"requisito"=>$requisito]);
     }
 
     /**
@@ -82,9 +87,21 @@ class RequisitoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Producto $producto)
+    public function update(Request $request,$id)
     {
-        //
+         $requisito = Requisito::findOrFail($id);
+         $this->validate($request,[ 'nombre'=>'required',
+                                    'puntaje'=>'required'
+                                    'id_ciclo'=>'required']);
+         $requisito->nombre = $request->input('nombre');
+         $requisito->puntaje = $request->input('puntaje');
+         $requisito->id_ciclo = $request->input('id_ciclo');
+      
+        if ($requisito->save()){
+            return redirect('administrador-requisito')->with('mensajesucces',"registro exitoso");
+        }else{
+            return redirect('administrador-requisito')->with('mensajesucces',"no se pudo guardar");
+        }
     }
 
     /**
@@ -95,30 +112,32 @@ class RequisitoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+         $requisito = Requisito::findOrFail($id);
+         $requisito->delete();
+       return  redirect()->route('administrador-requsito.index');
     }
 
-        public function categoria(Request $request, $id)
-    {
-       if ($request->ajax()) {
-         $categoria = DB::table('categoria')
-         ->where('id_ciudad','=',$id)
-         ->get();
-         return response()->json([
-            'categorias' => $categoria 
-         ]); 
-       }
-    }
+    //     public function categoria(Request $request, $id)
+    // {
+    //    if ($request->ajax()) {
+    //      $categoria = DB::table('categoria')
+    //      ->where('id_ciudad','=',$id)
+    //      ->get();
+    //      return response()->json([
+    //         'categorias' => $categoria 
+    //      ]); 
+    //    }
+    // }
 
-      public function subcategoria(Request $request, $id)
-    {
-       if ($request->ajax()) {
-         $subcategoria = DB::table('sub_categoria')
-         ->where('id_categoria','=',$id)
-         ->get();
-         return response()->json([
-            'subcategorias' => $subcategoria 
-         ]); 
-       }
-    }
+    //   public function subcategoria(Request $request, $id)
+    // {
+    //    if ($request->ajax()) {
+    //      $subcategoria = DB::table('sub_categoria')
+    //      ->where('id_categoria','=',$id)
+    //      ->get();
+    //      return response()->json([
+    //         'subcategorias' => $subcategoria 
+    //      ]); 
+    //    }
+    // }
 }
