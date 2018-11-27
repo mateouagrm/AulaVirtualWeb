@@ -23,7 +23,7 @@ DIRECTOR SISTEMA
             'direccion' => 'plan 3000',
             'email' => 'cesarfuentes120594@gmail.com',
             'password' => '123456',
-            'idcargo' => '1',
+            'id_cargo' => '1',
         ]);
 /*=================================================
 DIRECTOR INFORMATICA
@@ -37,7 +37,7 @@ DIRECTOR INFORMATICA
             'direccion' => 'plan 3000',
             'email' => 'cesarfuentes0594@gmail.com',
             'password' => '123456',
-            'idcargo' => '1',
+            'id_cargo' => '1',
         ]);
 /*=================================================
 DIRECTOR REDES
@@ -51,7 +51,7 @@ DIRECTOR REDES
             'direccion' => 'ramada av irala',
             'email' => 'ro0108@gmail.com',
             'password' => '123456',
-            'idcargo' => '1',
+            'id_cargo' => '1',
         ]);
 /*=================================================
 PROFESOR SISTEMA 
@@ -68,7 +68,7 @@ CABELLO MERIDA JUAN RUBEN   -> FINANZA PARA LA EMPRESA
             'direccion' => 'plan 3000',
             'email' => 'itfuturocesar@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         DB::table('users')->insert([
             'ci' => '2223',
@@ -79,7 +79,7 @@ CABELLO MERIDA JUAN RUBEN   -> FINANZA PARA LA EMPRESA
             'direccion' => 'plan 3000',
             'email' => 'tonysapgui1@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         DB::table('users')->insert([
             'ci' => '22243',
@@ -90,7 +90,7 @@ CABELLO MERIDA JUAN RUBEN   -> FINANZA PARA LA EMPRESA
             'direccion' => 'plan 3000',
             'email' => 'matehusjucha1@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
 /*=================================================
 PROFESOR INFORMATICA 
@@ -107,7 +107,7 @@ ZEBALLOS PAREDES DANIEL LUIS    -> FISICA II
             'direccion' => 'plan 3000',
             'email' => 'matehusjucha11@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         DB::table('users')->insert([
             'ci' => '2226',
@@ -118,7 +118,7 @@ ZEBALLOS PAREDES DANIEL LUIS    -> FISICA II
             'direccion' => 'plan 3000',
             'email' => 'matehusjucha1111@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         DB::table('users')->insert([
             'ci' => '2227',
@@ -129,7 +129,7 @@ ZEBALLOS PAREDES DANIEL LUIS    -> FISICA II
             'direccion' => 'plan 3000',
             'email' => 'futurocesar@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
 /*=================================================
 PROFESOR REDES 
@@ -146,7 +146,7 @@ VALLET VALLET CORRADO           -> PROGRAMACION ENSAMBLADOR
             'direccion' => 'av che guevara',
             'email' => 'cesarmundoparati1@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         DB::table('users')->insert([
             'ci' => '22245',
@@ -157,7 +157,7 @@ VALLET VALLET CORRADO           -> PROGRAMACION ENSAMBLADOR
             'direccion' => 'plan 3000',
             'email' => 'matehusjucha111@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         DB::table('users')->insert([
             'ci' => '22263',
@@ -168,7 +168,7 @@ VALLET VALLET CORRADO           -> PROGRAMACION ENSAMBLADOR
             'direccion' => 'plan 3000',
             'email' => 'matehusjucha1121@gmail.com',
             'password' => '123456',
-            'idcargo' => '2',
+            'id_cargo' => '2',
         ]);
         
     }

@@ -10,9 +10,10 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-         $this->call(CargoTableSeeder::class);
-     /*    $this->call(UsuarioTableSeeder::class);
+    {   
+ 
+     /*    $this->call(CargoTableSeeder::class);
+         $this->call(UsuarioTableSeeder::class);
          $this->call(CicloTableSeeder::class);
          $this->call(RequisitoTableSeeder::class);
          $this->call(CronogramaTableSeeder::class);
