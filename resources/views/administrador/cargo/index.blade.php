@@ -93,21 +93,7 @@
 
 @push('scripts')
 <script>
-    $(document).ready(function () {
-        $('#editar').click(function (e) {
-            //agregar();
-            console.log(e);
-        });
-    });
-    function agregar() {
-        limpiar();
-    }
-
-    function limpiar() {
-
-        $("#servicios").val("");
-    }
-
+    
 </script>
 @endpush
 @endsection
