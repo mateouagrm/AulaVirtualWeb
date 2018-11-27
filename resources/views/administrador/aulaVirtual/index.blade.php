@@ -16,12 +16,12 @@
             <div class="box-header">
             @include('mensajesucces')
             @include('mensajeerror')
-            <h3>Usuario general
+            <h3>Aula Virtual general
              <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarRecomendado">
                     Agregar Aula Virtual
              </button>
             </h3>
-             @include('administrador.aulaVirtual.modalAgregarUsuario')
+             @include('administrador.aulaVirtual.modalAgregarAulaVirtual')
             </div>
             
 
@@ -30,14 +30,11 @@
                     <thead>
                     <tr>
                         <th style="width:10px">#</th>
-                        <th>Ci</th>
-                        <th>Codigo</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Celular</th>
-                        <th>Direccion</th>
-                        <th>Email</th>
-                        <th>Id Cargo</th>
+                        <th>Id Creador</th>
+                        <th>Id Profesor</th>
+                        <th>Id Cronograma</th>
+                        <th>Carrera</th>
+                        <th>Materia</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
@@ -45,7 +42,11 @@
                     <tbody>
                     <tr role="row" class="odd">
                         <td class="sorting_1" tabindex="0">{{ $u->id}}</td>
-             
+                        <td>{{ $u->id_creador }}</td>
+                        <td>{{ $u->id_profesor }}</td>
+                        <td>{{ $u->id_cronograma }}</td>
+                        <td>{{ $u->carrera }}</td>
+                        <td>{{ $u->materia }}</td>
                         <td>
                             <div class="btn-group" >
                                 <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>
