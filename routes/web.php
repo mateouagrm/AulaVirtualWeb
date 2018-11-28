@@ -47,6 +47,9 @@ Route::resource('administrador-requisito','RequisitoController');
 
 /*MIS AULAS VIRTUALES*/
 Route::get('profesor-aula-virtual', 'ProfesorController@misAulasVirtuales');
+Route::get('profesor-aula-virtual/{id}', 'ProfesorController@procesoAulaVirtual');
+
+Route::get('envio/{id_aula}/{id_requisito}', 'ProfesorController@envio');
 
 //login registro.
 Route::post('/login2', 'UserController@login');

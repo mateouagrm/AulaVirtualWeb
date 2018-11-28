@@ -46,8 +46,8 @@
                         <td>0%</td>
                         <td>
                             <div class="btn-group" >
-                                <a href="#" >
-                                    <button class="btn btn-info btnEditarPerfil" ><i class="fa fa-pencil"></i> Ver proceso</button>    
+                                <a href="{{url('profesor-aula-virtual/'.$u->id)}}" >
+                                    <button class="btn btn-info btnEditarPerfil" ><i class="fa fa-eye"></i> Ver proceso</button>    
                                 </a>                                   
                             </div>
                         </td>
