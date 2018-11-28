@@ -35,6 +35,8 @@
                             <tr role="row" class="odd">
                                 <td class="sorting_1" tabindex="0">{{ $car->id }}</td>
                                 <td>{{ $car->nombre }}</td>
+                                <td>{{ $car->puntaje }}</td>
+                                <td>{{ $car->id_ciclo }}</td>
                                 <td>
                                 <div class="btn-group" >
                                     <a href="#" data-target="#modal-edit-{{$car->id}}" data-toggle="modal">
