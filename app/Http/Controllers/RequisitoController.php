@@ -22,7 +22,6 @@ class RequisitoController extends Controller
        $ciclo = Ciclo::All();
          return view('administrador.requisito.index', ["requisitos"=>$requisito,"ciclo"=>$ciclo]);    
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -114,6 +113,12 @@ class RequisitoController extends Controller
          $requisito = Requisito::findOrFail($id);
          $requisito->delete();
        return  redirect()->route('administrador-requsito.index');
+    }
+
+    public function getCiclos(){
+           $ciclos = Ciclo::all();
+        return response()->json([
+            'ciclos' => $ciclos]); 
     }
 
     //     public function categoria(Request $request, $id)
