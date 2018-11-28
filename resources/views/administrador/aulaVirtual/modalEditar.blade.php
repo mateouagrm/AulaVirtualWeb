@@ -27,7 +27,7 @@
                                         @if ($cre->id == $u->id_creador)
                                             <option value="{{$cre->id}}" selected>{{$cre->nombre}}</option>
                                         @else
-                                            <option value="{{$cre->id}}" selected>{{$cre->nombre}}</option>
+                                            <option value="{{$cre->id}}">{{$cre->nombre}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -44,7 +44,7 @@
                                         @if ($pro->id == $u->id_profesor)
                                             <option value="{{$pro->id}}" selected>{{$pro->nombre}}</option>
                                         @else
-                                            <option value="{{$pro->id}}" selected>{{$pro->nombre}}</option>
+                                            <option value="{{$pro->id}}">{{$pro->nombre}}</option>
                                         @endif
                                     @endforeach
                                 </select>
@@ -61,7 +61,7 @@
                                         @if ($pro->id == $u->id_cronograma)
                                             <option value="{{$pro->id}}" selected>{{$pro->inicio}}</option>
                                         @else
-                                            <option value="{{$pro->id}}" selected>{{$pro->inicio}}</option>
+                                            <option value="{{$pro->id}}">{{$pro->inicio}}</option>
                                         @endif
                                     @endforeach
                                 </select>

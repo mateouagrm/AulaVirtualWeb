@@ -79,6 +79,7 @@ class CronogramaController extends Controller
     {
         $this->validate($request,[ 'inicio'=>'required',
                                     'fin'=>'required']);
+    
         $cronograma = Cronograma::findOrFail($id);
         $cronograma->inicio = $request->input('inicio');
         $cronograma->fin = $request->input('fin');

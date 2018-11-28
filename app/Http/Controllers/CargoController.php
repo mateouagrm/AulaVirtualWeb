@@ -65,7 +65,6 @@ class CargoController extends Controller
     {
         $cargo = Cargo::findOrFail($id);
         $cargo->nombre = $request->get('nombre');
-        dd($cargo);
         $cargo->update();
         return Redirect::to('administrador-cargo');
     }

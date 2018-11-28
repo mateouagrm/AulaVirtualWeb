@@ -14,20 +14,19 @@
     <section class="content">
         <div class="box">
             <div class="box-header">
-            @include('mensajesucces')
-            @include('mensajeerror')
-            <h3>Usuario general
-             <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarRecomendado">
-                    Agregar usuario
-             </button>
-            </h3>
-            <div class="input-group col-lg-6 col-md-12 col-sm-12 col-xs-12" id="buscador">
-                @include('administrador.user.search')
-            </div>
-             @include('administrador.user.modalAgregarUsuario')
+                @include('mensajesucces')
+                @include('mensajeerror')
+                <h3>Usuario general
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarRecomendado">
+                            Agregar usuario
+                    </button>
+                </h3>
+                <div class="input-group col-lg-6 col-md-12 col-sm-12 col-xs-12" id="buscador">
+                    @include('administrador.user.search')
+                </div>
+                 @include('administrador.user.modalAgregarUsuario')
             </div>
             
-
             <div class="box-body table-responsive">
                 <table class="table table-bordered table-striped dt-responsive tablaProductos" width="100%">
                     <thead>
@@ -58,12 +57,17 @@
                         <td>{{ $u->id_cargo}}</td>
                         <td>
                             <div class="btn-group" >
-                                <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>
-
-                                <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i> eliminar</button>
+                                <a href="#" data-target="#modal-edit-{{$u->id}}" data-toggle="modal">
+                                    <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>    
+                                </a>                                   
+                                <a href="" data-target="#modal-delete-{{$u->id}}" data-toggle="modal">
+                                    <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i> eliminar</button>
+                                </a>
                             </div>
                         </td>
                     </tr>
+                    @include('administrador.user.modalEliminar')
+                    @include('administrador.user.modalEditar')
                     </tbody>
                    @endforeach
                 </table>

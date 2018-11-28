@@ -34,8 +34,8 @@ class AulaVirtualController extends Controller
         $profesores = DB::table('usuario')
          ->where('id_cargo','=',2)
          ->get();
-         $cronograma = Cronograma::all();
-          return view('administrador.aula.store', ["profesores"=>$profesores,"cronogramas" =>$cronograma]);
+        $cronograma = Cronograma::all();
+        return view('administrador.aula.store', ["profesores"=>$profesores,"cronogramas" =>$cronograma]);
     }
 
     /**
@@ -102,7 +102,7 @@ class AulaVirtualController extends Controller
         $aulaVirtual->id_creador = $request->get('id_creador');
         $aulaVirtual->id_profesor = $request->get('id_profesor');
         $aulaVirtual->id_cronograma = $request->get('id_cronograma');
-        if (AulaVirtual::create($request->all())){
+        if ($aulaVirtual->update()){
             return redirect('administrador-aula-virtual')->with('mensajesucces',"actualizacion exitosa");
         }else{
             return redirect('administrador-aula-virtual')->with('mensajesucces',"no se pudo actualizar");
