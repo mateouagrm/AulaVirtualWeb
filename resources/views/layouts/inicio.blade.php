@@ -67,7 +67,7 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profesor <span class="caret"></span></a>
                       <ul class="dropdown-menu" role="menu">
-                        <li><a href="{{url('administrador-cargo')}}">Archivo</a></li>
+                        <li><a href="{{url('profesor-aula-virtual')}}">mis Aulas Virtuales</a></li>
                       </ul>
                     </li>
                 </ul>

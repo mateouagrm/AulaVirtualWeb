@@ -43,6 +43,11 @@ Route::resource('administrador-aula-virtual','AulaVirtualController');
 /*REQUISITO*/
 Route::resource('administrador-requisito','RequisitoController');
 
+/*DE AQUI PARA ABAJO SON LOS CONTROLADORES DEL CLIENTE O PROFESOR*/
+
+/*MIS AULAS VIRTUALES*/
+Route::get('profesor-aula-virtual', 'ProfesorController@misAulasVirtuales');
+
 //login registro.
 Route::post('/login2', 'UserController@login');
 Route::post('/registro2', 'UserController@register');
