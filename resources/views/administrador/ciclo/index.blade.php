@@ -37,12 +37,17 @@
                                 <td>{{ $cic->puntaje}}</td>
                                 <td>
                                 <div class="btn-group" >
-                                    <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>
-
-                                    <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i> eliminar</button>
+                                    <a href="#" data-target="#modal-edit-{{$cic->id}}" data-toggle="modal">
+                                        <button class="btn btn-info btnEditarPerfil"  data-toggle="modal" data-target="#modalEditarPerfil"><i class="fa fa-pencil"></i> editar</button>    
+                                    </a>                                   
+                                    <a href="" data-target="#modal-delete-{{$cic->id}}" data-toggle="modal">
+                                        <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i> eliminar</button>
+                                    </a>
                                 </div>
                                 </td>
                             </tr>
+                            @include('administrador.ciclo.modalEliminar')
+                            @include('administrador.ciclo.modalEditar')
                         </tbody>
                         @endforeach
                     </table>

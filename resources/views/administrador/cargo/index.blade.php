@@ -37,14 +37,15 @@
                                 <div class="btn-group" >
                                     <a href="#" data-target="#modal-edit-{{$car->id}}" data-toggle="modal">
                                         <button class="btn btn-info"><i class="fa fa-pencil"></i>editar</button>    
+                                    </a>                                  
+                                    <a href="" data-target="#modal-delete-{{$car->id}}" data-toggle="modal">
+                                        <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i>eliminar</button>
                                     </a>
-                                    
-                                    <a href="" data-target="#modal-delete-{{$car->id}}" data-toggle="modal"><button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i>eliminar</button></a>
                                 </div>
                                 </td>
                             </tr>
-                            @include('administrador.cargo.modal')
-                            @include('administrador.cargo.modalEditarCargo')
+                            @include('administrador.cargo.modalEliminar')
+                            @include('administrador.cargo.modalEditar')
                         </tbody>
                         @endforeach
                     </table>

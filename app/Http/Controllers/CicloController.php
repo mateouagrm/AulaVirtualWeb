@@ -40,7 +40,7 @@ class CicloController extends Controller
         $this->validate($request,[ 'nombre'=>'required',
                                     'puntaje'=>'required']);
       
-        if (  Ciclo::create($request->all())){
+        if ( Ciclo::create($request->all())){
             return redirect('administrador-ciclo')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-ciclo')->with('mensajesucces',"no se pudo guardar");
@@ -81,8 +81,8 @@ class CicloController extends Controller
         $this->validate($request,[ 'nombre'=>'required',
                                     'puntaje'=>'required']);
         $ciclo = Ciclo::findOrFail($id);
-        $ciclo->nombre = $request->input('nombre');
-        $ciclo->puntaje = $request->input('puntaje');
+        $ciclo->nombre = $request->get('nombre');
+        $ciclo->puntaje = $request->get('puntaje');
 
         if ($ciclo->update()){
             return redirect('administrador-ciclo')->with('mensajesucces',"editado exitoso");

@@ -46,16 +46,17 @@ class AulaVirtualController extends Controller
      */
     public function store(Request $request)
     {
+        
         $this->validate($request,[ 'materia' =>'required',
                                     'carrera'=>'required',
-                                    'idcreador'=>'required',
-                                    'idprofesor'=>'required',
-                                    'idcronograma'=>'required']);
+                                    'id_creador'=>'required',
+                                    'id_profesor'=>'required',
+                                    'id_cronograma'=>'required']);
 
-        if (Categoria::create($request->all())){
-            return redirect('administrador-aula')->with('mensajesucces',"registro exitoso");
+        if (AulaVirtual::create($request->all())){
+            return redirect('administrador-aula-virtual')->with('mensajesucces',"registro exitoso");
         }else{
-            return redirect('administrador-aula')->with('mensajesucces',"no se pudo guardar");
+            return redirect('administrador-aula-virtual')->with('mensajesucces',"no se pudo guardar");
         }
     }
 
@@ -88,9 +89,24 @@ class AulaVirtualController extends Controller
      * @param  \App\CiudadCategoria  $ciudadCategoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CiudadCategoria $ciudadCategoria)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[ 'materia' =>'required',
+                                    'carrera'=>'required',
+                                    'id_creador'=>'required',
+                                    'id_profesor'=>'required',
+                                    'id_cronograma'=>'required']);
+        $aulaVirtual = AulaVirtual::findOrFail($id);
+        $aulaVirtual->materia = $request->get('materia');
+        $aulaVirtual->carrera = $request->get('carrera');
+        $aulaVirtual->id_creador = $request->get('id_creador');
+        $aulaVirtual->id_profesor = $request->get('id_profesor');
+        $aulaVirtual->id_cronograma = $request->get('id_cronograma');
+        if (AulaVirtual::create($request->all())){
+            return redirect('administrador-aula-virtual')->with('mensajesucces',"actualizacion exitosa");
+        }else{
+            return redirect('administrador-aula-virtual')->with('mensajesucces',"no se pudo actualizar");
+        }
     }
 
     /**
@@ -103,6 +119,6 @@ class AulaVirtualController extends Controller
     {
         $aula = AulaVirtual::find($id);
         $aula->delete();
-        return back();
+        return  redirect()->route('administrador-aula-virtual.index');
     }
 }

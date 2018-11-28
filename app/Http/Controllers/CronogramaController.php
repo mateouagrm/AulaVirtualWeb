@@ -75,11 +75,11 @@ class CronogramaController extends Controller
      * @param  \App\Recomendado  $recomendado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Recomendado $recomendado)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[ 'inicio'=>'required',
                                     'fin'=>'required']);
-        $cronograma = Ciclo::findOrFail($id);
+        $cronograma = Cronograma::findOrFail($id);
         $cronograma->inicio = $request->input('inicio');
         $cronograma->fin = $request->input('fin');
 
@@ -96,10 +96,10 @@ class CronogramaController extends Controller
      * @param  \App\Recomendado  $recomendado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Recomendado $recomendado)
+    public function destroy($id)
     {
-         $cronograma = Cronograma::findOrFail($id);
-         $cronograma->delete();
-       return  redirect()->route('administradorcronograma.index');
+        $cronograma = Cronograma::findOrFail($id);
+        $cronograma->delete();
+        return  redirect()->route('administrador-cronograma.index');
     }
 }
