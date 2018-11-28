@@ -23,7 +23,9 @@ class ArchivoController extends Controller
      */
     public function create()
     {
-        //
+        $requisitos = Requisito::all();
+        $aulas = AulaVirtual::all();
+        return view('administrador.archivo.store', ["requisitos"=>$requisitos, "aulas"=>$aulas]);
     }
 
     /**
@@ -34,7 +36,22 @@ class ArchivoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[ 'archivo' =>'required',
+                                    'fecha'=>'required',
+                                    'id_aula'=>'required',
+                                    'id_requisito'=>'required']);
+        if (request->hasFile('archivo')) {
+            $file = $request->file('archivo');
+            $nombre = time.$file->getClientOriginalName();
+            $file->move(public_path().'/archivos/', $nombre);
+        }
+        $archivo = new Archivo();
+        $archivo->nombre = $nombre;
+        $archivo->fecha = $request->input('fecha');
+        $archivo->id_aula = $request->input('id_aula');
+        $archivo->id_requisito = $request->input('id_requisito');
+        $archivo->save();
+        return save;
     }
 
     /**
