@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Requisito;
-
+use App\Ciclo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
@@ -19,9 +19,8 @@ class RequisitoController extends Controller
     public function index()
     {
        $requisito = Requisito::orderBy('id','desc')->paginate(10);
-
-         return view('administrador.requisito.index', ["requisitos"=>$requisito]);
-    
+       $ciclo = Ciclo::All();
+         return view('administrador.requisito.index', ["requisitos"=>$requisito,"ciclo"=>$ciclo]);    
     }
 
     /**
@@ -45,7 +44,7 @@ class RequisitoController extends Controller
     public function store(Request $request)
     {
          $this->validate($request,[ 'nombre'=>'required',
-                                    'puntaje'=>'required'
+                                    'puntaje'=>'required',
                                     'id_ciclo'=>'required']);
       
         if (  Requisito::create($request->all())){
@@ -91,7 +90,7 @@ class RequisitoController extends Controller
     {
          $requisito = Requisito::findOrFail($id);
          $this->validate($request,[ 'nombre'=>'required',
-                                    'puntaje'=>'required'
+                                    'puntaje'=>'required',
                                     'id_ciclo'=>'required']);
          $requisito->nombre = $request->input('nombre');
          $requisito->puntaje = $request->input('puntaje');

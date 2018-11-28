@@ -40,6 +40,8 @@ Route::resource('administrador-users','UserController');
 /*AULA VIRTUAL*/
 Route::resource('administrador-aula-virtual','AulaVirtualController');
 
+/*REQUISITO*/
+Route::resource('administrador-requisito','RequisitoController');
 
 //login registro.
 Route::post('/login2', 'UserController@login');

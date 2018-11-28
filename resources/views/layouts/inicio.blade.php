@@ -60,6 +60,7 @@
                         <li class="divider"></li>
                         <li><a href="{{url('administrador-users')}}">Users</a></li>
                         <li><a href="{{url('administrador-aula-virtual')}}">Aula Virtual</a></li>
+                        <li><a href="{{url('administrador-requisito')}}">requisito</a></li>
                       </ul>
                     </li>
                 </ul>
