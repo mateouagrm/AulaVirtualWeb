@@ -79,7 +79,6 @@
                                 <input type="text" class="form-control" name="materia" placeholder="ingrese la materia de una carrera" required>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

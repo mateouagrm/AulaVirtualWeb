@@ -1,7 +1,7 @@
 <div id="modalAgregarRecomendado" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ url('administrador') }}" method="post"  enctype="multipart/form-data">
+            <form action="{{ url('administrador-users') }}" method="post"  enctype="multipart/form-data">
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <!--=====================================
             CABEZA DEL MODAL
@@ -81,16 +81,34 @@
                             <input type="text" class="form-control" name="direccion" placeholder="direccion del usuario" required>
                         </div>
                     </div>
+
+                    <div class="form-group">  
+                        <div class="input-group">
+                            <span class="input-group-addon"> 
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input type="email" class="form-control" name="email" placeholder="email del usuario" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">  
+                        <div class="input-group">
+                            <span class="input-group-addon"> 
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                            <input type="password" class="form-control" name="password" placeholder="password del usuario" required>
+                        </div>
+                    </div>
                     <!--=====================================
-                       ENTRADA PARA LA Cargo
+                       ENTRADA PARA el Cargo
                    ======================================-->
                     <div class="form-group">
                         <div class="input-group">
                           <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                            <select name="idciudad" class="form-control input-lg seleccionarTipo" required>
+                            <select name="id_cargo" class="form-control input-lg seleccionarTipo" required>
                                 <option selected value="none" disabled="disabled">Selecionar Cargo</option>
                                 @foreach ($cargo as $c)
-                                <option value="{{$c->id}}">{{$c->nombre}}</option>
+                                    <option value="{{$c->id}}">{{$c->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
