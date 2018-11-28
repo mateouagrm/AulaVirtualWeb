@@ -56,6 +56,7 @@
                                     <a href="" data-target="#modal-delete-{{$car->id}}" data-toggle="modal">
                                         <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i>eliminar</button>
                                     </a>
+                                   
                                 </div> 
                                 </td>
                             </tr>

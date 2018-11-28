@@ -46,7 +46,6 @@ class AulaVirtualController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->validate($request,[ 'materia' =>'required',
                                     'carrera'=>'required',
                                     'id_creador'=>'required',

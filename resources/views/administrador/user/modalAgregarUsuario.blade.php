@@ -113,36 +113,6 @@
                             </select>
                         </div>
                     </div>
-                    <!--=====================================
-                        ENTRADA PARA EL TIPO DE USUARIO
-                    ======================================-->
-                    <div class="form-group">
-                        <div class="input-group">
-                          <span class="input-group-addon"><i class="fa fa-th"></i></span>
-                            <select id="tipo" name="tipo" class="form-control input-lg seleccionarTipo">
-                            <option selected value="none" disabled="disabled">Selecionar tipo de usuario</option>
-                                <option value="administrador">Administrador</option>
-                                <option value="coordinador">Coordinador</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div id="visibleUsuario" class="form-group" style="display: none;">
-                        <h3>PRIVILEGIOS</h3>
-                          <hr style="background: black;">
-                        <div class="input-group">
-                            <div class="checkbox">
-                                <label><input type="checkbox">actualizar datos</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox">editar datos</label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox">eliminar datos</label>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 

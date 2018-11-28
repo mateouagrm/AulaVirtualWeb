@@ -45,7 +45,6 @@ class RequisitoController extends Controller
          $this->validate($request,[ 'nombre'=>'required',
                                     'puntaje'=>'required',
                                     'id_ciclo'=>'required']);
-      
         if (  Requisito::create($request->all())){
             return redirect('administrador-requisito')->with('mensajesucces',"registro exitoso");
         }else{
@@ -59,9 +58,13 @@ class RequisitoController extends Controller
      * @param  \App\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Producto $producto)
+    public function show($id)
     {
-        //
+        $requisitos = Requisito::findOrFail($id);
+        $view = view ('requisitos.show', compact('requisitos'));
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view);
+        return $pdf->stream('requisitos');
     }
 
     /**
