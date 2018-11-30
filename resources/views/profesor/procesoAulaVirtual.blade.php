@@ -4,7 +4,8 @@
 <div class="container">
     <section class="content-header">
         <h4>
-            Aulas Virtuales
+            Aulas Virtuales 
+            {{$aulaVirtual->id}}
         </h4>
         <ol class="breadcrumb">
             <li><a href="{{url('/administrador')}}"><i class="fa fa-dashboard"></i> Inicio</a></li>
