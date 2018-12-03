@@ -36,11 +36,12 @@ class ArchivoController extends Controller
      */
     public function store(Request $request)
     {
+        dd($request);
         $this->validate($request,[ 'archivo' =>'required',
                                     'fecha'=>'required',
                                     'id_aula'=>'required',
                                     'id_requisito'=>'required']);
-        if (request->hasFile('archivo')) {
+        if ($request->hasFile('archivo')) {
             $file = $request->file('archivo');
             $nombre = time.$file->getClientOriginalName();
             $file->move(public_path().'/archivos/', $nombre);

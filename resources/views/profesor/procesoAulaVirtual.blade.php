@@ -42,7 +42,7 @@
                                          $sql="SELECT * FROM archivo as a 
                                          INNER JOIN aula_virtual as av on av.id=a.id_aula 
                                          INNER join requisito as r on a.id_requisito=r.id 
-                                         WHERE av.id=5 and r.id=$car->id";
+                                         WHERE av.id=$aulaVirtual->id and r.id=$car->id";
                                      $info = \DB::select($sql);
                                     ?>
                                       @if($info)
@@ -56,8 +56,8 @@
                                 <td>{{ $car->id_ciclo }}</td>
                                 <td>
                                 <div class="btn-group" >
-                                    <a href="#" data-target="#modal-edit-{{$car->id}}" data-toggle="modal">
-                                        <button class="btn btn-info"><i class="fa fa-pencil"></i>editar</button>    
+                                    <a href="#" data-target="#modal-inser-{{$car->id}}" data-toggle="modal">
+                                        <button class="btn btn-info"><i class="fa fa-pencil"></i>enviar</button>    
                                     </a>                                  
                                     <a href="" data-target="#modal-delete-{{$car->id}}" data-toggle="modal">
                                         <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i>eliminar</button>
@@ -66,6 +66,7 @@
                                 </td>
                             </tr>
                         </tbody>
+                            @include('profesor.modalEnviarArchivo')
                         @endforeach
                 </table>
             </div>

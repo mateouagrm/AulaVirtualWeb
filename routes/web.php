@@ -43,6 +43,9 @@ Route::resource('administrador-aula-virtual','AulaVirtualController');
 /*REQUISITO*/
 Route::resource('administrador-requisito','RequisitoController');
 
+/*ARCHIVO*/
+Route::resource('profesor-archivo','ArchivoController');
+
 /*DE AQUI PARA ABAJO SON LOS CONTROLADORES DEL CLIENTE O PROFESOR*/
 
 /*MIS AULAS VIRTUALES*/
