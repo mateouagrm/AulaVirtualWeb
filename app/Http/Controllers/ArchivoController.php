@@ -37,26 +37,38 @@ class ArchivoController extends Controller
      */
     public function store(Request $request)
     {   
+      //  dd($request->hasFile('fff'));
 
       /*  $this->validate($request,[ 'fff' =>'required',
                                     'fecha'=>'required',
                                    'id_aula'=>'required',
                                    'id_requisito'=>'required']);
         */
+      $archivo = new Archivo();
         if ($request->hasFile('fff')) {
+
             $dir          = 'uploads/';
             $extension    = strtolower($request->file('fff')->getClientOriginalExtension()); // get image extension
+
             $fileName     = str_random() . '.' . $extension; // rename image
+
             $request->file('fff')->move($dir, $fileName);
+            
+            $archivo->enlace = $fileName;
         }
-        $archivo = new Archivo();
+       
         $archivo->nombre = $request->input('nombre');
         $archivo->fecha = '12/12/12';
         $archivo->id_aula = $request->input('id_aula');
         $archivo->id_requisito = $request->input('id_requisito');
-        $archivo->enlace = $fileName;
-        $archivo->save();
-        return back();
+        
+      //  $archivo->save()
+        if ($archivo->save()) {
+            dd("ses guardo");
+        }else{
+            dd("no guardo");
+        }
+
     }
 
      public function store2(Request $request)
