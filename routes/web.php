@@ -44,7 +44,7 @@ Route::resource('administrador-aula-virtual','AulaVirtualController');
 Route::resource('administrador-requisito','RequisitoController');
 
 /*ARCHIVO*/
-Route::resource('profesor-archivo','ArchivoController');
+//Route::resource('profesor-archivo','ArchivoController');
 
 /*DE AQUI PARA ABAJO SON LOS CONTROLADORES DEL CLIENTE O PROFESOR*/
 
@@ -53,6 +53,9 @@ Route::get('profesor-aula-virtual', 'ProfesorController@misAulasVirtuales');
 Route::get('profesor-aula-virtual/{id}', 'ProfesorController@procesoAulaVirtual');
 
 Route::get('envio/{id_aula}/{id_requisito}', 'ProfesorController@envio');
+
+
+Route::post('/profesor-aula-virtual', 'ArchivoController@store');
 
 //login registro.
 Route::post('/login2', 'UserController@login');

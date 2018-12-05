@@ -1,7 +1,7 @@
 <div id="modal-inser-{{$car->id}}" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ url('profesor-archivo')}}" method="post"  enctype="multipart/form-data">
+            <form action="{{ url('profesor-aula-virtual')}}" method="post"  enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <!--=====================================
                 CABEZA DEL MODAL
@@ -49,14 +49,14 @@
                             </div>
                         </div>
                         <!--=====================================
-                             ENTRADA PARA EL ENLACE
+                             ENTRADA PARA EL Archivo
                          ======================================-->
                         <div class="form-group">  
                             <div class="input-group">
                                 <span class="input-group-addon"> 
                                     <i class="glyphicon glyphicon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" name="enlace" value=""  placeholder="enlace de archivo" required>
+                                <input type="file" class="form-control" name="fff" value=""  placeholder="subir archivo" required>
                             </div>
                         </div>
                     </div>

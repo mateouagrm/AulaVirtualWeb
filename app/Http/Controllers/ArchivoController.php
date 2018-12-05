@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
+use App\Archivo;
 class ArchivoController extends Controller
 {
     /**
@@ -35,6 +36,30 @@ class ArchivoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
+    {   
+
+      /*  $this->validate($request,[ 'fff' =>'required',
+                                    'fecha'=>'required',
+                                   'id_aula'=>'required',
+                                   'id_requisito'=>'required']);
+        */
+        if ($request->hasFile('fff')) {
+            $dir          = 'uploads/';
+            $extension    = strtolower($request->file('fff')->getClientOriginalExtension()); // get image extension
+            $fileName     = str_random() . '.' . $extension; // rename image
+            $request->file('fff')->move($dir, $fileName);
+        }
+        $archivo = new Archivo();
+        $archivo->nombre = $request->input('nombre');
+        $archivo->fecha = '12/12/12';
+        $archivo->id_aula = $request->input('id_aula');
+        $archivo->id_requisito = $request->input('id_requisito');
+        $archivo->enlace = $fileName;
+        $archivo->save();
+        return back();
+    }
+
+     public function store2(Request $request)
     {
         dd($request);
         $this->validate($request,[ 'archivo' =>'required',
@@ -52,8 +77,9 @@ class ArchivoController extends Controller
         $archivo->id_aula = $request->input('id_aula');
         $archivo->id_requisito = $request->input('id_requisito');
         $archivo->save();
-        return save;
+        return back();
     }
+
 
     /**
      * Display the specified resource.
