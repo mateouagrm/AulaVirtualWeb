@@ -1,7 +1,7 @@
 <div id="modal-edit-{{$u->id}}" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ action('AulaVirtualController@update', $u->id)}}" method="post"  enctype="multipart/form-data">
+            <form action="{{ action('AulaVirtualController@update', $u->id)}}" onsubmit="return validarAulaVitualEdit();" method="post"  enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <!--=====================================
@@ -16,6 +16,7 @@
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
+                        <div style="color: red;" id="mensajeAulaVirtualEdit"></div>
                         <!--=====================================
                              ENTRADA PARA EL ID CREADOR
                          ======================================-->
@@ -75,7 +76,7 @@
                                 <span class="input-group-addon"> 
                                     <i class="glyphicon glyphicon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" name="carrera" value="{{ $u->carrera }}"  required>
+                                <input type="text" class="form-control" name="carrera" id="carreraAulaVirtualEdit" value="{{ $u->carrera }}"  required>
                             </div>
                         </div>
                         <!--=====================================
@@ -86,7 +87,7 @@
                                 <span class="input-group-addon"> 
                                     <i class="glyphicon glyphicon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" name="materia" value="{{ $u->materia }}" required>
+                                <input type="text" class="form-control" name="materia" id="materiaAulaVirtualEdit" value="{{ $u->materia }}" required>
                             </div>
                         </div>
                     </div>

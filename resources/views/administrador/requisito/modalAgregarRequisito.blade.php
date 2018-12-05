@@ -1,7 +1,7 @@
    <div id="modalAgregarRecomendado" class="modal fade" role="dialog">
     <div class="modal-dialog">
             <div class="modal-content">
-                <form action="{{ url('/administrador-requisito') }}" method="post" >
+                <form action="{{ url('/administrador-requisito') }}" onsubmit="return validarRequisito();" method="post" >
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                         <!--=====================================
                        CABEZA DEL MODAL
@@ -15,13 +15,14 @@
                         ======================================-->
                     <div class="modal-body">
                         <div class="box-body">
+                            <div style="color: red;" id="mensajeRequisito"></div>
                             <!--=====================================
                             ATRIBUTO NOMBRE
                             ======================================-->
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                        <input type="text" class="form-control input-lg" value="" name="nombre" placeholder="Ingresar nombre del requisito">
+                                        <input type="text" class="form-control input-lg" value="" name="nombre" id="nombreRequisito" placeholder="Ingresar nombre del requisito">
                                 </div>
                             </div>
                             <!--=====================================
@@ -30,7 +31,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                        <input type="text" class="form-control input-lg" value="" name="puntaje" placeholder="Ingresar puntaje del requisito">
+                                        <input type="text" class="form-control input-lg" value="" name="puntaje" id="puntajeRequisito" placeholder="Ingresar puntaje del requisito">
                                 </div>
                             </div>
                             <!--=====================================

@@ -1,7 +1,7 @@
 <div id="modalAgregarRecomendado" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ url('administrador-aula-virtual') }}" method="post"  enctype="multipart/form-data">
+            <form action="{{ url('administrador-aula-virtual') }}" onsubmit="return validarAulaVitual();" method="post"  enctype="multipart/form-data">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <!--=====================================
                 CABEZA DEL MODAL
@@ -15,6 +15,7 @@
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
+                        <div style="color: red;" id="mensajeAulaVirtual"></div>
                         <!--=====================================
                              ENTRADA PARA EL ID CREADOR
                          ======================================-->
@@ -65,7 +66,7 @@
                                 <span class="input-group-addon"> 
                                     <i class="glyphicon glyphicon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" name="carrera" placeholder="ingrese la carrera a registrar" required>
+                                <input type="text" class="form-control" name="carrera" id="carreraAulaVirtual" placeholder="ingrese la carrera a registrar" required>
                             </div>
                         </div>
                         <!--=====================================
@@ -76,7 +77,7 @@
                                 <span class="input-group-addon"> 
                                     <i class="glyphicon glyphicon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" name="materia" placeholder="ingrese la materia de una carrera" required>
+                                <input type="text" class="form-control" name="materia" id="materiaAulaVirtual" placeholder="ingrese la materia de una carrera" required>
                             </div>
                         </div>
                     </div>

@@ -172,11 +172,6 @@ FOOTER
             <!--=====================================
                 MAPS  FOOTER
             ======================================-->
-            <div class="col-lg-5 col-md-6 col-xs-12 footerCategorias">
-                <div style="width: 100%">
-                    <iframe width="100%" height="300" src="https://maps.google.com/maps?width=100%&height=300&hl=es&coord=-17.788695114548204,-63.19747857857756&q=Writel%20Bolivia%20S.R.L.+(Writel%20Bolivia%20S.R.L.)&ie=UTF8&t=&z=15&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/crear-un-mapa-de-google/">Crear Google Map</a> by <a href="https://www.mapsdirections.info/">Mapa España</a></iframe>
-                </div><br />
-            </div>
 
             <!--=====================================
             FORMULARIO CONTÁCTENOS
@@ -247,6 +242,11 @@ FINAL
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/plantilla.js')}}"></script>
 <script src="{{asset('js/infoproducto.js')}}"></script>
+<script src="{{asset('js/cargo.js')}}"></script>
+<script src="{{asset('js/ciclo.js')}}"></script>
+<script src="{{asset('js/aulaVirtual.js')}}"></script>
+<script src="{{asset('js/requisito.js')}}"></script>
+<script src="{{asset('js/archivo.js')}}"></script>
 
 </body>
 </html>

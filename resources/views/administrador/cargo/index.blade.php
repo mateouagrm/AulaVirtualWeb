@@ -55,7 +55,7 @@
         </div>
         <div class="col-md-5">
             <div class="modal-content">
-                <form action="{{ url('/administrador-cargo') }}" method="post" >
+                <form action="{{ url('/administrador-cargo') }}" method="post" onsubmit="return validar();">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                         <!--=====================================
                        CABEZA DEL MODAL
@@ -64,6 +64,7 @@
                         <button type="button" class="close" data-dismiss="modal"></button>
                             <h4 class="modal-title">Agregar Cargo</h4>
                     </div>
+                    <div style="color: red;" id="mensajeCargo"></div>
                         <!--=====================================
                         CUERPO DEL MODAL
                         ======================================-->
@@ -72,7 +73,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                        <input type="text" class="form-control input-lg" value="" name="nombre" placeholder="Ingresar nombre del Cargo">
+                                        <input type="text" class="form-control input-lg" value="" name="nombre" id="nombreCargo" placeholder="Ingresar nombre del Cargo">
                                 </div>
                             </div>
                         </div>

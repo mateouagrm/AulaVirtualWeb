@@ -57,7 +57,7 @@
         </div>
         <div class="col-md-5">
             <div class="modal-content">
-                <form action="{{ url('/administrador-ciclo') }}" method="post" >
+                <form action="{{ url('/administrador-ciclo') }}" method="post" onsubmit="return validarCliclo();">
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                         <!--=====================================
                        CABEZA DEL MODAL
@@ -66,6 +66,7 @@
                         <button type="button" class="close" data-dismiss="modal"></button>
                             <h4 class="modal-title">Agregar Ciclo</h4>
                     </div>
+                    <div style="color: red;" id="mensajeCiclo"></div>
                         <!--=====================================
                         CUERPO DEL MODAL
                         ======================================-->
@@ -74,14 +75,14 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                        <input type="text" class="form-control input-lg" value="" name="nombre" placeholder="Ingresar nombre del Ciclo">
+                                        <input type="text" class="form-control input-lg" value="" name="nombre" id="nombreCiclo"d placeholder="Ingresar nombre del Ciclo">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                        <input type="number" class="form-control input-lg" value="" name="puntaje" placeholder="Ingresar el puntaje">
+                                        <input type="number" class="form-control input-lg" value="" name="puntaje" id="puntajeCliclo" placeholder="Ingresar el puntaje">
                                 </div>
                             </div>
                         </div>
