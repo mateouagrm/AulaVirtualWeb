@@ -43,7 +43,7 @@
                         <td>{{ $u->id_cronograma}}</td>
                         <td>{{ $u->carrera}}</td>
                         <td>{{ $u->materia}}</td>
-                        <td>0%</td>
+                        <td> {{$puntajes[$u->id]}} %</td>
                         <td>
                             <div class="btn-group" >
                                 <a href="{{url('profesor-aula-virtual/'.$u->id)}}" >

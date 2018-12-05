@@ -33,19 +33,13 @@
                                 <th>Acciones</th>
                             </tr>
                         </thead>
-                        @foreach ($requisitos as $car)
+                        @foreach ($requisitos as $key => $car)
                         <tbody>
                             <tr role="row" class="odd">
                                 <td class="sorting_1" tabindex="0">{{ $car->id }}</td>
                                 <td>
-                                    <?php 
-                                         $sql="SELECT * FROM archivo as a 
-                                         INNER JOIN aula_virtual as av on av.id=a.id_aula 
-                                         INNER join requisito as r on a.id_requisito=r.id 
-                                         WHERE av.id=$aulaVirtual->id and r.id=$car->id";
-                                     $info = \DB::select($sql);
-                                    ?>
-                                      @if($info)
+                                  
+                                      @if($enviados[$key])
                                              <span class="label label-success fontSize">enviado</span>
                                       @else
                                           <span class="label label-warning fontSize">no enviado</span>

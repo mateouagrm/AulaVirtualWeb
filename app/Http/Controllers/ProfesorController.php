@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\AulaVirtual;
 use App\Requisito;
+use App\Ciclo;
 use DB;
 
 class ProfesorController extends Controller
@@ -88,36 +89,55 @@ class ProfesorController extends Controller
     public function misAulasVirtuales()
     {
         $aulaVirtual = AulaVirtual::All()->where('id_profesor','7');
+        $ciclos = Ciclo::All();
+        $puntajes = array();
+        foreach ($aulaVirtual as $k => $a) {
+            $p = 0;
+            foreach ($ciclos as $j => $c) {
+          $sql="SELECT SUM(re.puntaje) as puntaje from aula_virtual as av 
+                inner join archivo as a on a.id_aula = av.id
+                inner join requisito as re on a.id_requisito =   re.id
+                inner join ciclo as c on re.id_ciclo = c.id
+                where  av.id= ". $a->id." and re.id_ciclo=".$c->id;
+
+        $info = DB::select($sql);
+        $p = $p + $info[0]->puntaje * $c->puntaje /100;
+        }
+         $puntajes[$a->id] = $p;
+        }
+
         return view('profesor.misAulasVirtuales', 
-            ["aulaVirtual"=>$aulaVirtual]);
+            ["aulaVirtual"=>$aulaVirtual, "puntajes" => $puntajes]);
     }
 
 
     public function procesoAulaVirtual($id)
     {
-        $aulaVirtual = AulaVirtual::findOrFail($id);
+        $aulaVirtual = AulaVirtual::find($id);
         $requisito = Requisito::All();
-
+        $enviados = $this->requisitos_enviados($id,$requisito);
         return view('profesor.procesoAulaVirtual', 
-            ["aulaVirtual"=>$aulaVirtual,"requisitos"=>$requisito]);
+            ["aulaVirtual"=>$aulaVirtual,"requisitos"=>$requisito,"enviados"=>$enviados]);
     }
-
+    
+    public function requisitos_enviados($id,$requisito){
+         $enviados =  array();
+        foreach ($requisito as $r) {
+         $enviados[] =  $this->envio($id,$r->id);
+        }
+        return $enviados;
+    }
     public function envio($id_aula , $id_requisito)
     {
 
         $sql="SELECT * FROM archivo as a
-INNER JOIN aula_virtual as av on av.id=a.id_aula
-INNER join requisito as r on a.id_requisito=r.id
-WHERE av.id=$id_aula and r.id=$id_requisito";
+            INNER JOIN aula_virtual as av on av.id=a.id_aula
+            INNER JOIN requisito as r on a.id_requisito=r.id
+            WHERE av.id=$id_aula and r.id=$id_requisito";
 
         $info = DB::select($sql);
 
-        if ($info) {
-            dd("true");
-        }else{
-            dd("false");
-        }
-        
+       return $info ? true : false;    
     }
     
 }
