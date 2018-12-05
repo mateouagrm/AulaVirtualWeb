@@ -410,4 +410,7 @@ VITRINA DE PRODUCTOS MÁS VENDIDOS
   </div>
 </div>
 
+@push('scripts')
+<script src="{{asset('js/slide.js')}}"></script>
+@endpush
 @endsection

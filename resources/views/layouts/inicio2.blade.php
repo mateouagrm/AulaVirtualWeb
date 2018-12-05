@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="{{asset('css/cabezote.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/slide.css')}}">
-    
-
+    <link rel="stylesheet" href="{{asset('css/productos.css')}}">
+     <link rel="stylesheet" href="{{asset('css/infoproducto.css')}}">
     <link rel="shortcut icon" type="image/ico" href="{{asset('img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
@@ -172,13 +172,10 @@ FOOTER
             <!--=====================================
                 MAPS  FOOTER
             ======================================-->
-<<<<<<< HEAD
-=======
             <div class="col-lg-5 col-md-6 col-xs-12 footerCategorias">
                 <div style="width: 100%">
                 </div><br />
             </div>
->>>>>>> 3b7c2f270903fe1ab4a8706ee2a2168937f39f5f
 
             <!--=====================================
             FORMULARIO CONTÁCTENOS
@@ -245,15 +242,10 @@ FINAL
 <script src="{{asset('js/plugins/jquery.easing.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.scrollUp.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.flexslider.js')}}"></script>
-
+<script src="{{asset('js/slide.js')}}"></script>
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/plantilla.js')}}"></script>
 <script src="{{asset('js/infoproducto.js')}}"></script>
-<script src="{{asset('js/cargo.js')}}"></script>
-<script src="{{asset('js/ciclo.js')}}"></script>
-<script src="{{asset('js/aulaVirtual.js')}}"></script>
-<script src="{{asset('js/requisito.js')}}"></script>
-<script src="{{asset('js/archivo.js')}}"></script>
 
 </body>
 </html>
