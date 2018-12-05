@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="{{asset('css/cabezote.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/slide.css')}}">
-    
-
+    <link rel="stylesheet" href="{{asset('css/productos.css')}}">
+     <link rel="stylesheet" href="{{asset('css/infoproducto.css')}}">
     <link rel="shortcut icon" type="image/ico" href="{{asset('img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
@@ -242,7 +242,7 @@ FINAL
 <script src="{{asset('js/plugins/jquery.easing.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.scrollUp.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.flexslider.js')}}"></script>
-
+<script src="{{asset('js/slide.js')}}"></script>
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/plantilla.js')}}"></script>
 <script src="{{asset('js/infoproducto.js')}}"></script>
