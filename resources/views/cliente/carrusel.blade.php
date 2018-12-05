@@ -116,7 +116,7 @@ SLIDESHOW
 	<hr>
     <div class="col-sm-6">
       	<h3>Column 1</h3>
-	      <embed src="{{asset('pdf/Eventos.pdf')}}" alt="" width="100%" height="400">
+	      sfsd
 	    </div>
 	    <div class="col-sm-6">
 	      <h3>Column 2</h3>
