@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cargo;
+use App\Buscar;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
@@ -40,6 +41,11 @@ class CargoController extends Controller
         $cargo = new Cargo;
         $cargo->nombre = $request->get('nombre');
         $cargo->save();
+        $buscar = new Buscar;
+        $buscar->nombre = $request->get('nombre');
+        $buscar->tipo = 'cargo';
+        $buscar->ruta = 'administrador-cargo';
+        $buscar->save();
         return Redirect::to('administrador-cargo');
     }
 

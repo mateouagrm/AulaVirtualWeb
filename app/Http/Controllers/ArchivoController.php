@@ -62,12 +62,13 @@ class ArchivoController extends Controller
         $archivo->id_aula = $request->input('id_aula');
         $archivo->id_requisito = $request->input('id_requisito');
         
-      //  $archivo->save()
-        if ($archivo->save()) {
+        $archivo->save();
+        /*if ($archivo->save()) {
             dd("ses guardo");
         }else{
             dd("no guardo");
-        }
+        }*/
+        return back();
 
     }
 

@@ -1,7 +1,7 @@
 <div id="modal-inser-{{$car->id}}" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="{{ url('profesor-aula-virtual')}}" method="post"  enctype="multipart/form-data" >
+            <form action="{{ url('profesor-aula-virtual')}}"  method="post"  enctype="multipart/form-data" onsubmit="return validarArchivo({{$car->id}});">
                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                 <!--=====================================
                 CABEZA DEL MODAL
@@ -15,7 +15,7 @@
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <div style="color: red;" id="mensajeArchivo"></div>
+                        <div style="color: red;" id="mensajeArchivoId">fcg</div>
                         <!--=====================================
                              ENTRADA PARA EL NOMBRE
                          ======================================-->
@@ -57,7 +57,7 @@
                                 <span class="input-group-addon"> 
                                     <i class="glyphicon glyphicon-user"></i>
                                 </span>
-                                <input type="file" class="form-control" name="fff" value="" id="fileArchivo"  placeholder="subir archivo" >
+                                <input type="file" class="form-control" name="fff" value="" id="{{$car->id}}f"  placeholder="subir archivo" >
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/cabezote.css')}}">
     <link rel="stylesheet" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/slide.css')}}">
+    <link rel="stylesheet" href="{{asset('css/estilos.css')}}">
     
 
     <link rel="shortcut icon" type="image/ico" href="{{asset('img/favicon.png')}}">
@@ -109,7 +110,7 @@ HEADER
                 BUSCADOR
                 ======================================-->
                 <div class="input-group col-lg-12 col-md-12 col-sm-12 col-xs-12" id="buscador">
-                    <input type="search" name="buscar" class="form-control" placeholder="Buscar...">
+                    <input type="search" id="input-search" name="buscar" class="form-control" placeholder="Buscar...">
                     <span class="input-group-btn">
 						<a href="#">
 							<button class="btn btn-default backColor" type="submit">
@@ -118,6 +119,23 @@ HEADER
 						</a>
 					</span>
                 </div>
+                    <div class="content-search">
+                        <div class="content-table">
+                            <table id="table">
+                                <thead>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                    
+                                <tbody>
+                                    <tr >
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
             </div>
             <!--=====================================
             CARRITO DE COMPRAS
@@ -137,6 +155,7 @@ HEADER
  <div>
       @yield('content') 
  </div>
+
 
 
 
@@ -245,7 +264,7 @@ FINAL
 <script src="{{asset('js/plugins/jquery.easing.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.scrollUp.js')}}"></script>
 <script src="{{asset('js/plugins/jquery.flexslider.js')}}"></script>
-
+<script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/plantilla.js')}}"></script>
 <script src="{{asset('js/infoproducto.js')}}"></script>
@@ -254,6 +273,7 @@ FINAL
 <script src="{{asset('js/aulaVirtual.js')}}"></script>
 <script src="{{asset('js/requisito.js')}}"></script>
 <script src="{{asset('js/archivo.js')}}"></script>
+<script src="{{asset('js/search.js')}}"></script>
 
 </body>
 </html>
