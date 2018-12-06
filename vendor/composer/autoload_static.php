@@ -336,6 +336,7 @@ class ComposerStaticInit00fb2a779540e9c3da791fd50def9b69
         'App\\Http\\Controllers\\CicloController' => __DIR__ . '/../..' . '/app/Http/Controllers/CicloController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CronogramaController' => __DIR__ . '/../..' . '/app/Http/Controllers/CronogramaController.php',
+        'App\\Http\\Controllers\\ProfesorController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProfesorController.php',
         'App\\Http\\Controllers\\RequisitoController' => __DIR__ . '/../..' . '/app/Http/Controllers/RequisitoController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',

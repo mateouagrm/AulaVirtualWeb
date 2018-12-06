@@ -18,8 +18,8 @@ class DatabaseSeeder extends Seeder
          $this->call(RequisitoTableSeeder::class);
          $this->call(CronogramaTableSeeder::class);
          $this->call(AulaVirtualTableSeeder::class);  
-         $this->call(Aula_CicloTableSeeder::class);   
+         $this->call(Aula_CicloTableSeeder::class);     */
          $this->call(ArchivoTableSeeder::class);
-         */
+         
     }
 }

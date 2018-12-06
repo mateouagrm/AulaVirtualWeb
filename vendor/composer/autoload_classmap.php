@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\CicloController' => $baseDir . '/app/Http/Controllers/CicloController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CronogramaController' => $baseDir . '/app/Http/Controllers/CronogramaController.php',
+    'App\\Http\\Controllers\\ProfesorController' => $baseDir . '/app/Http/Controllers/ProfesorController.php',
     'App\\Http\\Controllers\\RequisitoController' => $baseDir . '/app/Http/Controllers/RequisitoController.php',
     'App\\Http\\Controllers\\UserController' => $baseDir . '/app/Http/Controllers/UserController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
