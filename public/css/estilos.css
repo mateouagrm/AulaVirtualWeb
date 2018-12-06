@@ -1,0 +1,54 @@
+.content-search{
+    height: 15vh;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: rgba(0,0,0,0);
+    display: none;
+}
+
+.content-table{
+    width: 80%;
+    max-height: 200px;
+    height: 15vh;
+    background: rgba(0,0,0,0.3);
+    margin-left: 40px;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+.content-table table{
+    width: 100%;
+}
+
+tbody tr td a .jj {
+    display: block;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+tbody tr td a .jj:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+#table_length, #table_filter, #table_info, #table_paginate{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

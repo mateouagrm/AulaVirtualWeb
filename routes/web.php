@@ -63,3 +63,5 @@ Route::post('/login2', 'UserController@login');
 Route::post('/registro2', 'UserController@register');
 
 
+//buscar
+Route::get('/buscar/{nombre}', 'BuscarController@buscar');
