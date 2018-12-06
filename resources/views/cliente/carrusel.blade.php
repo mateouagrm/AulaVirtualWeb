@@ -122,7 +122,7 @@ SLIDESHOW
 	      <h3>Column 2</h3>
 			<div class="card">
 			  <div class="card-body">
-				<iframe  src="https://www.youtube.com/embed/sesss3X4a1w" id="video" allowfullscreen width="100%" height="300"></iframe>
+			
 			   </div>
 			</div>
 	    </div>
