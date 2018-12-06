@@ -18,6 +18,10 @@
                 @include('mensajesucces')
                 @include('mensajeerror')
                 <h3>lista de aulas virtuales que dispongo</h3>
+
+                        <a href="{{url('profesor-aula-virtual_estadisticas')}}" >
+                                    <button class="btn btn-info btnEditarPerfil" ><i class="fa fa-eye"></i> Estadistica</button>    
+                                </a>  
             </div>
             
             <div class="box-body table-responsive">

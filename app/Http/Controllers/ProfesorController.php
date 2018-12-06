@@ -139,5 +139,37 @@ class ProfesorController extends Controller
 
        return $info ? true : false;    
     }
+
+
+    public function misAulasVirtualesEstadisticas()
+    {
+        $aulaVirtual = AulaVirtual::All()->where('id_profesor','7');
+        $ciclos = Ciclo::All();
+        $puntajes_total = array();
+        $data_aula = array();
+        foreach ($aulaVirtual as $k => $a) {
+            $p = 0;
+            $puntajes_ciclo = array();
+            foreach ($ciclos as $j => $c) {
+          $sql="SELECT SUM(re.puntaje) as puntaje from aula_virtual as av 
+                inner join archivo as a on a.id_aula = av.id
+                inner join requisito as re on a.id_requisito =   re.id
+                inner join ciclo as c on re.id_ciclo = c.id
+                where  av.id= ". $a->id." and re.id_ciclo=".$c->id;
+
+        $info = DB::select($sql);
+        $p = $p + $info[0]->puntaje * $c->puntaje /100;
+        $puntajes_ciclo[] = array("Ciclo ".$c->id , $info[0]->puntaje* $c->puntaje /100);
+        }
+         $puntajes_total[] = array("name" =>$a->materia,
+                                    "id" =>$a->materia,
+                                    "data" => $puntajes_ciclo );
+         $data_aula[] = array("name" => $a->materia,
+                                "y" => $p,
+                                "drilldown" => $a->materia);
+        }
+        return view('estadisticas.graficosAulas', 
+            ["aulaVirtual"=>$aulaVirtual, "puntajes" => json_encode($data_aula),"puntajeCiclo" => json_encode($puntajes_total)]);
+    }
     
 }

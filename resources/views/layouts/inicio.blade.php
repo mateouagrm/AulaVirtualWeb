@@ -255,5 +255,6 @@ FINAL
 <script src="{{asset('js/requisito.js')}}"></script>
 <script src="{{asset('js/archivo.js')}}"></script>
 
+
 </body>
 </html>
