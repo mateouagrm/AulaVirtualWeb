@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\AulaVirtual;
 use App\User;
 use App\Cronograma;
+use App\Buscar;
 use Illuminate\Http\Request;
 use DB;
 
@@ -51,8 +52,12 @@ class AulaVirtualController extends Controller
                                     'id_creador'=>'required',
                                     'id_profesor'=>'required',
                                     'id_cronograma'=>'required']);
-
         if (AulaVirtual::create($request->all())){
+            $buscar = new Buscar;
+            $buscar->nombre = $request->get('materia');
+            $buscar->tipo = 'aula_virtual';
+            $buscar->ruta = 'administrador-aula-virtual';
+            $buscar->save();
             return redirect('administrador-aula-virtual')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-aula-virtual')->with('mensajesucces',"no se pudo guardar");

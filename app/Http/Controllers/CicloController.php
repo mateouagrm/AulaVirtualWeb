@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Ciclo;
+use App\Buscar;
 use Illuminate\Http\Request;
 
 class CicloController extends Controller
@@ -36,11 +37,14 @@ class CicloController extends Controller
      */
     public function store(Request $request)
     {
-       
         $this->validate($request,[ 'nombre'=>'required',
-                                    'puntaje'=>'required']);
-      
+                                    'puntaje'=>'required']);     
         if ( Ciclo::create($request->all())){
+            $buscar = new Buscar;
+            $buscar->nombre = $request->get('nombre');
+            $buscar->tipo = 'ciclo';
+            $buscar->ruta = 'administrador-ciclo';
+            $buscar->save();
             return redirect('administrador-ciclo')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-ciclo')->with('mensajesucces',"no se pudo guardar");

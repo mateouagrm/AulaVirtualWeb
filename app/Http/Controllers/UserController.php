@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\User;
 use App\Cargo;
+use App\Buscar;
 use Hash;
 use DB;
 
@@ -44,6 +45,11 @@ class UserController extends Controller
                                     'password'=>'required',
                                     'id_cargo'=>'required']);
         if (User::create($request->all())){
+            $buscar = new Buscar;
+            $buscar->nombre = $request->get('nombre');
+            $buscar->tipo = 'user';
+            $buscar->ruta = 'administrador-users';
+            $buscar->save();
             return redirect('administrador-users')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-users')->with('mensajesucces',"no se pudo guardar");
