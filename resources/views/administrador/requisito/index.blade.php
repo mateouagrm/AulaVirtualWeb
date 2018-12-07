@@ -72,7 +72,7 @@
 
 @push('scripts')
 <script>
-    var url = 'conteo/administrador-requisito';
+    var url = "{{url('conteo/administrador-requisito')}}";
     $.get(url,function(resul){
         var datos= jQuery.parseJSON(resul);
        console.log(datos);

@@ -72,7 +72,7 @@
 
 @push('scripts')
 <script>
-    var url = 'conteo/administrador-aula-virtual';
+    var url = "{{url('conteo/administrador-aula-virtual')}}";
     $.get(url,function(resul){
         var datos= jQuery.parseJSON(resul);
        console.log(datos);
