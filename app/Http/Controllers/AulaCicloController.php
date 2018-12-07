@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Categoria;
+use App\Buscar;
 use Illuminate\Http\Request;
 
 class AulaCicloController extends Controller
@@ -27,6 +28,11 @@ class AulaCicloController extends Controller
         $this->validate($request,[ 'nombre'=>'required']);
         Categoria::create($request->all());
         if (Categoria::create($request->all())){
+            $buscar = new Buscar;
+            $buscar->nombre = $request->get('nombre');
+            $buscar->tipo = 'aula_ciclo';
+            $buscar->ruta = 'administrador-ciclo';
+            $buscar->save();
             return redirect('administrador-categoria')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-categoria')->with('mensajesucces',"no se pudo guardar");

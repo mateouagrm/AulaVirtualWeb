@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cronograma;
+use App\Buscar;
 use Illuminate\Http\Request;
 
 class CronogramaController extends Controller
@@ -40,6 +41,11 @@ class CronogramaController extends Controller
         $this->validate($request,[ 'inicio'=>'required',
                                     'fin'=>'required']);
         if (  Cronograma::create($request->all())){
+            $buscar = new Buscar;
+            $buscar->nombre = $request->get('inicio');
+            $buscar->tipo = 'cronograma';
+            $buscar->ruta = 'administrador-cronograma';
+            $buscar->save();
             return redirect('administrador-cronograma')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-cronograma')->with('mensajesucces',"no se pudo guardar");

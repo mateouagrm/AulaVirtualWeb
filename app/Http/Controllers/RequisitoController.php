@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Requisito;
 use App\Ciclo;
+use App\Buscar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
@@ -46,6 +47,11 @@ class RequisitoController extends Controller
                                     'puntaje'=>'required',
                                     'id_ciclo'=>'required']);
         if (  Requisito::create($request->all())){
+            $buscar = new Buscar;
+            $buscar->nombre = $request->get('nombre');
+            $buscar->tipo = 'requisito';
+            $buscar->ruta = 'administrador-requisito';
+            $buscar->save();
             return redirect('administrador-requisito')->with('mensajesucces',"registro exitoso");
         }else{
             return redirect('administrador-requisito')->with('mensajesucces',"no se pudo guardar");
