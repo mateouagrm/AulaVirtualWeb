@@ -52,9 +52,6 @@
                                 <div class="btn-group" >
                                     <a href="#" data-target="#modal-inser-{{$car->id}}" data-toggle="modal">
                                         <button class="btn btn-info"><i class="fa fa-pencil"></i>enviar</button>    
-                                    </a>                                  
-                                    <a href="" data-target="#modal-delete-{{$car->id}}" data-toggle="modal">
-                                        <button class="btn btn-danger btnEliminarPerfil" ><i class="fa fa-trash"></i>eliminar</button>
                                     </a>
                                 </div> 
                                 </td>

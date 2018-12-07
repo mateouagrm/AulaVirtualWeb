@@ -16,6 +16,7 @@ class CicloController extends Controller
     public function index()
     {
         $ciclo=Ciclo::orderBy('id','desc')->paginate(5);
+        
         return view('administrador.ciclo.index', ["ciclo"=>$ciclo]);
     }
 

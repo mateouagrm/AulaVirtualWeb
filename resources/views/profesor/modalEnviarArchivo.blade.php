@@ -15,16 +15,16 @@
                 ======================================-->
                 <div class="modal-body">
                     <div class="box-body">
-                        <div style="color: red;" id="mensajeArchivoId">fcg</div>
+                        <div style="color: red;" id="mensajeArchivoId"></div>
                         <!--=====================================
                              ENTRADA PARA EL NOMBRE
                          ======================================-->
                         <div class="form-group">  
                             <div class="input-group">
                                 <span class="input-group-addon"> 
-                                    <i class="glyphicon glyphicon-user"></i>
+                                    <i>Requisito</i>
                                 </span>
-                                <input type="text" class="form-control" name="nombre" value="{{$car->nombre}}"  required>
+                                <input type="text" class="form-control" name="nombre" value="{{$car->nombre}}"  readonly="readonly">
                             </div>
                         </div>
                         <!--=====================================
@@ -33,9 +33,9 @@
                         <div class="form-group">  
                             <div class="input-group">
                                 <span class="input-group-addon"> 
-                                    <i class="glyphicon glyphicon-user"></i>
+                                    <i>id Aula Virtual</i>
                                 </span>
-                                <input type="text" class="form-control" name="id_aula" value="{{$aulaVirtual->id}}"  required>
+                                <input type="text" class="form-control" name="id_aula" value="{{$aulaVirtual->id}}"  readonly="readonly">
                             </div>
                         </div>
                         <!--=====================================
@@ -44,9 +44,9 @@
                         <div class="form-group">  
                             <div class="input-group">
                                 <span class="input-group-addon"> 
-                                    <i class="glyphicon glyphicon-user"></i>
+                                    <i>id Requisito</i>
                                 </span>
-                                <input type="text" class="form-control" name="id_requisito" value="{{$car->id}}"  required>
+                                <input type="text" class="form-control" name="id_requisito" value="{{$car->id}}"  readonly="readonly">
                             </div>
                         </div>
                         <!--=====================================
@@ -55,7 +55,7 @@
                         <div class="form-group">  
                             <div class="input-group">
                                 <span class="input-group-addon"> 
-                                    <i class="glyphicon glyphicon-user"></i>
+                                    <i class="glyphicon glyphicon-file"></i>
                                 </span>
                                 <input type="file" class="form-control" name="fff" value="" id="{{$car->id}}f"  placeholder="subir archivo" >
                             </div>

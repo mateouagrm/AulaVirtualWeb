@@ -21,6 +21,7 @@ class AulaVirtualController extends Controller
         $director = User::All()->where('id_cargo','1');
         $profesor = User::All()->where('id_cargo','2');
         $aula=AulaVirtual::orderBy('id','DESC')->paginate(8);
+        
         return view('administrador.aulaVirtual.index', 
             ["aulas"=>$aula,"director"=>$director,"profesor"=>$profesor,"cronograma"=>$cronograma]);
     }
