@@ -19,7 +19,7 @@ class CrearTablaArchivo extends Migration
              $table->integer('id_aula')->unsigned();
              $table->integer('id_requisito')->unsigned();
              $table->string('enlace')->nullable();
-             $table->string('fecha');
+             $table->string('fecha')->nullable();
 
 
             $table->foreign('id_aula')->references('id')->on('aula_virtual')->onDelete('cascade')->onUpdate('cascade');
