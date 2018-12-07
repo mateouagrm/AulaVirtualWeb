@@ -17,7 +17,13 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        //
+         $users = DB::table('users')
+         ->where('id_cargo', "=","2")
+         ->orderBy('id','asc')
+         ->paginate(8);
+        
+         return view('profesor.index', ["users"=>$users]);
+        
     }
 
     /**
@@ -86,9 +92,9 @@ class ProfesorController extends Controller
         //
     }
 
-    public function misAulasVirtuales()
+    public function misAulasVirtuales($id)
     {
-        $aulaVirtual = AulaVirtual::All()->where('id_profesor','7');
+        $aulaVirtual = AulaVirtual::All()->where('id_profesor',$id);
         $ciclos = Ciclo::All();
         $puntajes = array();
         foreach ($aulaVirtual as $k => $a) {
@@ -141,9 +147,9 @@ class ProfesorController extends Controller
     }
 
 
-    public function misAulasVirtualesEstadisticas()
+    public function misAulasVirtualesEstadisticas($id)
     {
-        $aulaVirtual = AulaVirtual::All()->where('id_profesor','8');
+        $aulaVirtual = AulaVirtual::All()->where('id_profesor',$id);
         $ciclos = Ciclo::All();
         $puntajes_total = array();
         $data_aula = array();
