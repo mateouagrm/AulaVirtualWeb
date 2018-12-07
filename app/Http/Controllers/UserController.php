@@ -23,6 +23,7 @@ class UserController extends Controller
     public function index()
     {   $cargo = Cargo::All();
         $user=User::orderBy('id','DESC')->paginate(3);
+
         return view('administrador.user.index', ["user"=>$user , "cargo"=>$cargo ]);
     }
 

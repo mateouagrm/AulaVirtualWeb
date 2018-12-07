@@ -20,6 +20,7 @@ class RequisitoController extends Controller
     public function index()
     {
        $requisito = Requisito::orderBy('id','desc')->paginate(10);
+       
        $ciclo = Ciclo::All();
          return view('administrador.requisito.index', ["requisitos"=>$requisito,"ciclo"=>$ciclo]);    
     }

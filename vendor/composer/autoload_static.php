@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit00fb2a779540e9c3da791fd50def9b69
+class ComposerStaticInite6d377df940f7b0eb2f00374c9a5ab66
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -320,6 +320,7 @@ class ComposerStaticInit00fb2a779540e9c3da791fd50def9b69
         'App\\Archivo' => __DIR__ . '/../..' . '/app/Archivo.php',
         'App\\AulaCiclo' => __DIR__ . '/../..' . '/app/AulaCiclo.php',
         'App\\AulaVirtual' => __DIR__ . '/../..' . '/app/AulaVirtual.php',
+        'App\\Buscar' => __DIR__ . '/../..' . '/app/Buscar.php',
         'App\\Cargo' => __DIR__ . '/../..' . '/app/Cargo.php',
         'App\\Ciclo' => __DIR__ . '/../..' . '/app/Ciclo.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -332,6 +333,7 @@ class ComposerStaticInit00fb2a779540e9c3da791fd50def9b69
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\BuscarController' => __DIR__ . '/../..' . '/app/Http/Controllers/BuscarController.php',
         'App\\Http\\Controllers\\CargoController' => __DIR__ . '/../..' . '/app/Http/Controllers/CargoController.php',
         'App\\Http\\Controllers\\CicloController' => __DIR__ . '/../..' . '/app/Http/Controllers/CicloController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -365,6 +367,7 @@ class ComposerStaticInit00fb2a779540e9c3da791fd50def9b69
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'CargoTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CargoTableSeeder.php',
         'CicloTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CicloTableSeeder.php',
+        'ContadorTableSeeder' => __DIR__ . '/../..' . '/database/seeds/ContadorTableSeeder.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/DayOfMonthField.php',
@@ -3705,11 +3708,11 @@ class ComposerStaticInit00fb2a779540e9c3da791fd50def9b69
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit00fb2a779540e9c3da791fd50def9b69::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit00fb2a779540e9c3da791fd50def9b69::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit00fb2a779540e9c3da791fd50def9b69::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit00fb2a779540e9c3da791fd50def9b69::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit00fb2a779540e9c3da791fd50def9b69::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInite6d377df940f7b0eb2f00374c9a5ab66::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInite6d377df940f7b0eb2f00374c9a5ab66::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInite6d377df940f7b0eb2f00374c9a5ab66::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite6d377df940f7b0eb2f00374c9a5ab66::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInite6d377df940f7b0eb2f00374c9a5ab66::$classMap;
 
         }, null, ClassLoader::class);
     }

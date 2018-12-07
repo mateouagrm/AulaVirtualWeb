@@ -16,6 +16,7 @@ class CronogramaController extends Controller
     public function index()
     {
         $cronograma=Cronograma::orderBy('id','DESC')->paginate(5);
+        
         return view('administrador.cronograma.index', ["cronograma"=>$cronograma]);
     }
 

@@ -149,7 +149,11 @@ class ProfesorController extends Controller
 
     public function misAulasVirtualesEstadisticas($id)
     {
+<<<<<<< HEAD
         $aulaVirtual = AulaVirtual::All()->where('id_profesor',$id);
+=======
+        $aulaVirtual = AulaVirtual::All()->where('id_profesor','7');
+>>>>>>> a3c3aa9565eae1bb56eb16e79c57dfc742b8ed44
         $ciclos = Ciclo::All();
         $puntajes_total = array();
         $data_aula = array();
