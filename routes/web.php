@@ -65,3 +65,6 @@ Route::post('/registro2', 'UserController@register');
 
 //buscar
 Route::get('/buscar/{nombre}', 'BuscarController@buscar');
+
+//contador
+Route::get( 'conteo/{nombre}','ContadorController@updateView');

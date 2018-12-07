@@ -140,13 +140,13 @@ HEADER
             <!--=====================================
             CARRITO DE COMPRAS
             ======================================-->
-            <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
+                 <div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="carrito">
                 <a href="#">
                     <button class="btn btn-default pull-left backColor">
                         <i class="fa fa-money" aria-hidden="true"></i>
                     </button>
                 </a>
-                <p>ACUMULADO <span class="cantidadCesta"></span> <br> BS <span class="sumaCesta">20</span></p>
+                <p>ACUMULADO <span class="cantidadCesta"></span> <br> N° <span class="sumaCesta" id ="contador">0</span></p>
             </div>
         </div>
     </div>

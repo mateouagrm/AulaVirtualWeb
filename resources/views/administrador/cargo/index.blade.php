@@ -93,9 +93,16 @@
  </section>
  </div>
 
+
+@endsection
+
 @push('scripts')
 <script>
-    
+    var url = 'conteo/administrador-cargo';
+    $.get(url,function(resul){
+        var datos= jQuery.parseJSON(resul);
+       console.log(datos);
+        document.getElementById("contador").innerHTML = datos.cantidad  + '  visitas';
+    })
 </script>
 @endpush
-@endsection
