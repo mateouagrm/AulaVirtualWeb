@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>writel Bolivia S.R.L.</title>
+    <title>DEDTE</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="{{asset('css/plugins/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/plugins/font-awesome.min.css')}}">
@@ -19,6 +19,23 @@
     <link rel="shortcut icon" type="image/ico" href="{{asset('img/favicon.png')}}">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Condensed" rel="stylesheet">
+
+    <style>
+        .fondo1 {
+        background-color: #000;
+        }
+        .fondo2 {
+        background-color: #333;
+        }
+        .fondo3 {
+        background-color: #fff;
+        }
+    </style>
+    <script>
+        function cambiarFondo(id){
+            document.body.className='fondo'+id;
+        }
+    </script>
 </head>
 <body>
 <div class="container-fluid barraSuperior" id="top">
@@ -80,7 +97,14 @@
                 <ul>
                     <li><a href="#modalIngreso" data-toggle="modal">Ingresar</a></li>
                     <li>|</li>
-                    <li><a href="#modalRegistro" data-toggle="modal">Crear una cuenta</a></li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Estilos<span class="caret"></span></a>
+                      <ul class="dropdown-menu" >
+                        <li><a id="1" class="estilo1" onclick="cambiarFondo(id)">Estilo1</a></li>
+                        <li><a id="2" class="estilo2" onclick="cambiarFondo(id)">Estilo2</a></li>
+                        <li><a id="3" class="estilo3" onclick="cambiarFondo(id)">Estilo3</a></li>
+                      </ul>
+                    </li>
                 </ul>
             </div>
             @include('layouts.modalRegister')
