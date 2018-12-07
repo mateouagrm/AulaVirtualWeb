@@ -49,15 +49,16 @@ Route::resource('administrador-requisito','RequisitoController');
 /*DE AQUI PARA ABAJO SON LOS CONTROLADORES DEL CLIENTE O PROFESOR*/
 
 /*MIS AULAS VIRTUALES*/
-Route::get('profesor-aula-virtual', 'ProfesorController@misAulasVirtuales');
+Route::get('profesor-aula-virtuales/{id}', 'ProfesorController@misAulasVirtuales');
 Route::get('profesor-aula-virtual/{id}', 'ProfesorController@procesoAulaVirtual');
-Route::get('profesor-aula-virtual_estadisticas', 'ProfesorController@misAulasVirtualesEstadisticas');
+Route::get('profesor-aula-virtual_estadisticas/{id}', 'ProfesorController@misAulasVirtualesEstadisticas');
 
 Route::get('envio/{id_aula}/{id_requisito}', 'ProfesorController@envio');
 
 
 Route::post('/profesor-aula-virtual', 'ArchivoController@store');
 
+Route::get('profesor-aula', 'ProfesorController@index');
 //login registro.
 Route::post('/login2', 'UserController@login');
 Route::post('/registro2', 'UserController@register');
@@ -65,3 +66,6 @@ Route::post('/registro2', 'UserController@register');
 
 //buscar
 Route::get('/buscar/{nombre}', 'BuscarController@buscar');
+
+//contador
+Route::get( 'conteo/{nombre}','ContadorController@updateView');

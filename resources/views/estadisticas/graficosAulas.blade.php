@@ -85,4 +85,6 @@ Highcharts.chart('container', {
 });
         </script>
 
+
 @endpush
+

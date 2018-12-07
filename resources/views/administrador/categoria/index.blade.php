@@ -69,3 +69,4 @@
  </div>
 @include('administrador.categoria.modalAgregarCategoria')
 @endsection
+

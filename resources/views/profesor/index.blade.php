@@ -1,14 +1,13 @@
 @extends ('layouts.inicio')
 @section ('content')
-
 <div class="container">
     <section class="content-header">
         <h4>
-            Aulas Virtuales
+            Usuario General
         </h4>
         <ol class="breadcrumb">
             <li><a href="{{url('/administrador')}}"><i class="fa fa-dashboard"></i> Inicio</a></li>
-            <li class="active">personal</li>
+            <li class="active">Gestor Usuarios</li>
         </ol>
     </section>
 
@@ -17,8 +16,8 @@
             <div class="box-header">
                 @include('mensajesucces')
                 @include('mensajeerror')
-                <h3>lista de aulas virtuales que dispongo</h3>
-
+                <h3>Profesores
+                </h3>
             </div>
             
             <div class="box-body table-responsive">
@@ -26,46 +25,56 @@
                     <thead>
                     <tr>
                         <th style="width:10px">#</th>
-                        <th>Id_Creador</th>
-                        <th>Id_Profesor</th>
-                        <th>Id_Cronograma</th>
-                        <th>Carrera</th>
-                        <th>Materia</th>
-                        <th>Proceso</th>
+                        <th>Ci</th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Celular</th>
+                        <th>Direccion</th>
+                        <th>Email</th>
+                        <th>Id Cargo</th>
                         <th>Acciones</th>
                     </tr>
                     </thead>
-                    @foreach ($aulaVirtual as $u)
+                    @foreach ($user as $u)
                     <tbody>
                     <tr role="row" class="odd">
                         <td class="sorting_1" tabindex="0">{{ $u->id}}</td>
-                        <td>{{ $u->id_creador}}</td>
-                        <td>{{ $u->id_profesor}}</td>
-                        <td>{{ $u->id_cronograma}}</td>
-                        <td>{{ $u->carrera}}</td>
-                        <td>{{ $u->materia}}</td>
-                        <td> {{$puntajes[$u->id]}} %</td>
+                        <td>{{ $u->ci}}</td>
+                        <td>{{ $u->codigo}}</td>
+                        <td>{{ $u->nombre}}</td>
+                        <td>{{ $u->apellido}}</td>
+                        <td>{{ $u->celular}}</td>
+                        <td>{{ $u->direccion}}</td>
+                        <td>{{ $u->email}}</td>
+                        <td>{{ $u->id_cargo}}</td>
                         <td>
                             <div class="btn-group" >
-                                <a href="{{url('profesor-aula-virtual/'.$u->id)}}" >
-                                    <button class="btn btn-info btnEditarPerfil" ><i class="fa fa-eye"></i> Ver proceso</button>    
+                                <a href="{{ action('ProfesorController@misAulasVirtuales', $u->id)}}" data-toggle="modal">
+                                    <button class="btn btn-info btnEditarPerfil"  ><i class="fa fa-pencil"></i>Aulas viruales</button>    
+                                </a>  
+
+                                <a href="{{ action('ProfesorController@misAulasVirtualesEstadisticas', $u->id)}}" data-toggle="modal">
+                                    <button class="btn btn-info btnEditarPerfil"  ><i class="fa fa-pencil"></i>Estadisticas</button>    
                                 </a>                                   
+                               
                             </div>
                         </td>
                     </tr>
+                  
                     </tbody>
                    @endforeach
                 </table>
+              {{ $user->render()}}
             </div>
         </div>
     </section>
 </div>
-
 @endsection
 
 @push('scripts')
 <script>
-    var url = "{{url('conteo/profesor-aula-virtuales')}}";
+    var url = "{{url('conteo/profesor-aula')}}";
     $.get(url,function(resul){
         var datos= jQuery.parseJSON(resul);
        console.log(datos);
@@ -73,3 +82,4 @@
     })
 </script>
 @endpush
+

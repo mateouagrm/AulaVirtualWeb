@@ -77,3 +77,14 @@
     </section>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    var url = 'conteo/administrador-users';
+    $.get(url,function(resul){
+        var datos= jQuery.parseJSON(resul);
+       console.log(datos);
+        document.getElementById("contador").innerHTML = datos.cantidad  + '  visitas';
+    })
+</script>
+@endpush
