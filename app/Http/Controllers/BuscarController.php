@@ -14,7 +14,7 @@ use Hash;
 class BuscarController extends Controller
 {
    public function buscar($nombre)
-    {
+    {	
         $nombres=DB::table('buscar')
         ->where('nombre','LIKE','%'.$nombre.'%')
         ->orderBy('id','asc')->get();

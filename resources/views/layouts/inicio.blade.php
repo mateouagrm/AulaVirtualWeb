@@ -22,10 +22,10 @@
 
     <style>
         .fondo1 {
-        background-color: #000;
+        background-color:   #FFFF00;
         }
         .fondo2 {
-        background-color: #333;
+        background-color: #20B2AA;
         }
         .fondo3 {
         background-color: #fff;
@@ -137,7 +137,7 @@ HEADER
                     <input type="search" id="input-search" name="buscar" class="form-control" placeholder="Buscar...">
                     <span class="input-group-btn">
 						<a href="#">
-							<button class="btn btn-default backColor" type="submit">
+							<button class="btn btn-default backColor" id="busque" type="submit">
 								<i class="fa fa-search"></i>
 							</button>
 						</a>
