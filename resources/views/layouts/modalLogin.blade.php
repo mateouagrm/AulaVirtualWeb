@@ -10,8 +10,10 @@ VENTANA MODAL PARA EL INGRESO
             <!--=====================================
             INGRESO DIRECTO
             ======================================-->
-            <form method="post" action="{{url('login2')}}">   
+            <form action="{{url('login3')}}"  method="POST">   
                  {{ csrf_field() }}
+                 sss
+                      <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <hr>
                 <div class="form-group">
                     <div class="input-group">  

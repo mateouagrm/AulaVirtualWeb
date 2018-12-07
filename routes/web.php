@@ -69,3 +69,8 @@ Route::get('/buscar/{nombre}', 'BuscarController@buscar');
 
 //contador
 Route::get( 'conteo/{nombre}','ContadorController@updateView');
+
+
+
+Route::post('/login3', ['as' =>'login3', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\AuthController@getLogout']);
