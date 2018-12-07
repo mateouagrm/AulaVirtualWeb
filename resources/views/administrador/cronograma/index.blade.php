@@ -106,6 +106,7 @@
 @push('scripts')
 <script>
     var url = "{{url('conteo/administrador-cronograma')}}";
+    
     $.get(url,function(resul){
         var datos= jQuery.parseJSON(resul);
        console.log(datos);
