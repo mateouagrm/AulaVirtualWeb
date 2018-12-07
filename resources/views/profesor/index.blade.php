@@ -50,11 +50,11 @@
                         <td>{{ $u->id_cargo}}</td>
                         <td>
                             <div class="btn-group" >
-                                <a href="{{ action('ProfesorController@misAulasVirtuales', $u->id_cargo)}}" data-toggle="modal">
+                                <a href="{{ action('ProfesorController@misAulasVirtuales', $u->id)}}" data-toggle="modal">
                                     <button class="btn btn-info btnEditarPerfil"  ><i class="fa fa-pencil"></i>Aulas viruales</button>    
                                 </a>  
 
-                                <a href="{{ action('ProfesorController@misAulasVirtualesEstadisticas', $u->id_cargo)}}" data-toggle="modal">
+                                <a href="{{ action('ProfesorController@misAulasVirtualesEstadisticas', $u->id)}}" data-toggle="modal">
                                     <button class="btn btn-info btnEditarPerfil"  ><i class="fa fa-pencil"></i>Estadisticas</button>    
                                 </a>                                   
                                
@@ -71,4 +71,15 @@
     </section>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+    var url = "{{url('conteo/profesor-aula')}}";
+    $.get(url,function(resul){
+        var datos= jQuery.parseJSON(resul);
+       console.log(datos);
+        document.getElementById("contador").innerHTML = datos.cantidad  + '  visitas';
+    })
+</script>
+@endpush
 

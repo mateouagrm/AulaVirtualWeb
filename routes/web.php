@@ -49,7 +49,7 @@ Route::resource('administrador-requisito','RequisitoController');
 /*DE AQUI PARA ABAJO SON LOS CONTROLADORES DEL CLIENTE O PROFESOR*/
 
 /*MIS AULAS VIRTUALES*/
-Route::get('profesor-aula-virtual/{id}', 'ProfesorController@misAulasVirtuales');
+Route::get('profesor-aula-virtuales/{id}', 'ProfesorController@misAulasVirtuales');
 Route::get('profesor-aula-virtual/{id}', 'ProfesorController@procesoAulaVirtual');
 Route::get('profesor-aula-virtual_estadisticas/{id}', 'ProfesorController@misAulasVirtualesEstadisticas');
 

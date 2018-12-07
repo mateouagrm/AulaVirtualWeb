@@ -19,9 +19,6 @@
                 @include('mensajeerror')
                 <h3>lista de aulas virtuales que dispongo</h3>
 
-                        <a href="{{url('profesor-aula-virtual_estadisticas')}}" >
-                                    <button class="btn btn-info btnEditarPerfil" ><i class="fa fa-eye"></i> Estadistica</button>    
-                                </a>  
             </div>
             
             <div class="box-body table-responsive">
@@ -68,7 +65,7 @@
 
 @push('scripts')
 <script>
-    var url = 'conteo/profesor-aula-virtual';
+    var url = "{{url('conteo/profesor-aula-virtuales')}}";
     $.get(url,function(resul){
         var datos= jQuery.parseJSON(resul);
        console.log(datos);
