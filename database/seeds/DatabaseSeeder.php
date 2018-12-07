@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
          $this->call(AulaVirtualTableSeeder::class);  
          $this->call(Aula_CicloTableSeeder::class);     
          $this->call(ArchivoTableSeeder::class);
-         
+     
+        $this->call(ContadorTableSeeder::class); 
     }
 }
